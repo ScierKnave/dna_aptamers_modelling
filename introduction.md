@@ -15,9 +15,8 @@ automatiquement les principes sous-jacents à ces processus en utilisant NUPACK 
 Motivation de Dereck:
 J’aimerais augmenter ma familiarité avec l’utilisation d’algorithmes d’apprentissage
 automatique spécialisés dans le traitement de séquences (RNN, LSTM, Transformers). 
-De plus, je me suis découvert un intérêt récent dans la biologie. De plus, c’est l’algorithme 
-AlphaFold de DeepMind qui m’a fait comprendre la puissance des réseaux de neurones alors 
-je suis excité de travailler sur un projet connexe.
+C’est l’algorithme AlphaFold de DeepMind qui m’a fait comprendre la puissance des réseaux de neurones alors 
+je suis excité de travailler sur un projet connexe. De plus, je me suis découvert un intérêt récent dans la biologie.
 
 Motivation de Jonas:
 J'ai aussi été inspiré par AlphaFold de DeepMind. Ce modèle m'a fait comprendre que l'apprentissage machine peut avoir un impact concret et important pour la recherche scientifique, en particulier en biologie. Le monde de la biologie est vaste, ce qui le rend difficile à explorer par la recherche exhaustive, c'est donc un domaine parfait pour les algorithmes d'IA. C'est aussi le cas pour les aptamères, donc ce projet est une bonne opportunité d'apprendre à implémenter des algorithmes complexes tout ayant un impact réel sur un domaine scientifique émergent.
