@@ -1,8 +1,7 @@
 \begin{thebibliography}{1}
 
-\bibitem{transPaper}
-Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
-  Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\bibitem{transformers}
+Ashish Vaswani~& al.
 \newblock Attention is all you need.
 \newblock {\em CoRR}, abs/1706.03762, 2017.
 

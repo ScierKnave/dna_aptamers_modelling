@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  24 FEB 2023 09:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  24 FEB 2023 10:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -50,35 +50,47 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
 
-Overfull \hbox (13.63048pt too wide) in paragraph at lines 40--44
-\OT1/cmr/m/n/10 mal parmi une s^^Selection. https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
- []
 
-
-Overfull \hbox (61.5008pt too wide) in paragraph at lines 40--44
-\OT1/cmr/m/n/10 learn-ing guided ap-tamer re-fine-ment and dis-cov-ery" (https://www.nature.com/articles/s41467-
- []
-
-
-Overfull \hbox (6.63022pt too wide) in paragraph at lines 40--44
-\OT1/cmr/m/n/10 tam^^Reres les plus com-pat-i-bles (high affin-ity) avec des mol^^Secules cibles. L'estimation
- []
+LaTeX Warning: Citation `transformers' on page 1 undefined on input line 49.
 
 [1
 
-{C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (devoir3.bbl) [2] (devoir3.aux) ) 
+{C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (0.443pt too wide) in paragraph at lines 55--55
+[]\OT1/cmr/bx/n/14.4 Currenctly used clas-si-cal al-go-rithms (State of The
+ []
+
+(devoir3.bbl
+devoir3.bbl:4: Misplaced alignment tab character &.
+l.4 Ashish Vaswani~&
+                     al.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+) [2] (devoir3.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 468 strings out of 476374
- 9452 string characters out of 5788854
- 1856340 words of memory out of 5000000
- 20924 multiletter control sequences out of 15000+600000
- 516580 words of font info for 46 fonts, out of 8000000 for 9000
+ 465 strings out of 476374
+ 9435 string characters out of 5788854
+ 1855340 words of memory out of 5000000
+ 20920 multiletter control sequences out of 15000+600000
+ 516888 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,38p,783b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on devoir3.pdf (2 pages, 79729 bytes).
+ 34i,7n,38p,272b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on devoir3.pdf (2 pages, 90718 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
+ 39 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

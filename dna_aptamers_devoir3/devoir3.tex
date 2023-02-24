@@ -1,5 +1,5 @@
 \documentclass{article}
-\title{Devoir 3: Revue de la Littérature}
+\title{Devoir 3: Revue of the litterature}
 \author
 {
     Guillermo Martinez (matricule x)
@@ -13,37 +13,70 @@
 \begin{document}
 \maketitle
 
-\section*{Aptamères}
-\subsection*{Description des aptamères}
+\section*{Aptamers}
+\subsection*{Description of aptamers}
 *insert*
-\subsection*{Motivation de l'étude des aptamères}
+\subsection*{Motivation behind the study of Aptamers}
 *insert*
 
-\section*{Algorithmes d'apprentissage automatique}
+\section*{Machine learning algorithms}
 \subsection*{Multilayer Perceptrons}
 *insert*
 \subsection*{Reccurent Neural Networks}
-*insert*
+The broad definition of a recurrent neural network 
+is that there are some cycles in the layers. 
+Typical recurrent network adapted for sequences 
+imply the recording of a certain state in the network, 
+which is called the hidden state of the reference neural network. 
+Most classical recurrent neural networks were not made to be used for 
+parallelization, which means that you have to process each token one at 
+a time. One advantage of recurrent neural network is that they grow 
+linearly with respect to the amount of tokens as input, which means 
+that you can input a really, really huge. Um input, and it will still 
+work, which is different from transformers, because the complexity 
+implies a quadratic term over the number of input tokens, which makes 
+it practically impossible for large documents. However, for our 
+particular problem, transformers should have no problem at. At processing 
+tokens, tokens in the range of 
+treaty to 100, which is what is? Actually relevant. And with respect to abdomirrs?
 \subsection*{Transformers}
-Selon nos hypothèses, l'architecture *transformer*  est de loin
-la plus appropriée pour notre tâche. les transformers utilisent 
-un mecanisme d'attention multi-tête et l'auto-attention. Soit
-un séquence de tokens d'entrée. Alors le mécanisme d'attention 
-créera pour chaque token d'entrée un autre token qui est une 
-combinaison linéaire des autres vecteurs d'entrée donnés. Ainsi, 
-on \cite{transPaper}. Comme on suppose une forte corrélation 
-entre les éléments de l'entrée, (...) Positional encodings ()
+According to our assumptions, the *transformer* architecture is by far the most appropriate
+most appropriate for our task. Transformers use a multi-headed 
+a multi-headed attention mechanism and self-attention. Let
+be a sequence of input tokens. Then the attention mechanism 
+mechanism will create for each input token another token which is a 
+linear combination of the other given input vectors. Thus, 
+we \cite{transformers}. As we assume a strong correlation 
+between the input elements, (...) Positional encodings ()
+
 \subsection*{G-flow nets}
 *insert*
 
-\section*{Algorithmes utilisés présentement (State of The Art)}
-Il existe présentement peu de recherches et d'articles sur l'apprentisage des aptamères avec des algorithmes d'apprentissage profond. Des algorithmes propres à la biologie sont plutôt favorisés, ainsi que des algorithmes de regroupement (clustering). Par exemple, cet article de janvier 2023 utilise un algorithme original qui combine des méthodes de regroupement pour trouver un aptamère optimal parmi une sélection. https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
-Cependant, quelques articles récents utilisent l'apprentissage profond. "Machine learning guided aptamer refinement and discovery" (https://www.nature.com/articles/s41467-021-22555-9) fait appel à un réseau neuronal standard MLP pour trouver les aptamères les plus compatibles (high affinity) avec des molécules cibles. L'estimation de l'énergie libre est une sous-étape du calcul de l'affinité. Il performe une étape de troncage pour minimiser la longueur de l'aptamère sans altérer ses propriétés. 
-Un autre modèle d'apprentissage profond avec des aptamères est AptaNet (https://www.nature.com/articles/s41598-021-85629-0). Ce modèle utilise un MLP et un CNN pour apprendre la relation entre des aptamères et des protéines cibles (Aptamere-protein relations ou API). Le MLP fonctionne le mieux, avec une précision de test de 91.38%. Ce réseau neuronal est nettement plus performant que des algorithmes plus traditionnels comme SVM, KNN et les forêts aléatoires. Ce modèle utilise une base de données très détaillées contenant de nombreuses variables auxiliaires mesurées en laboratoire pour chaque individu, mais n'ayant que 1000 individus. 
-Aucun modèle sur les aptamères publié n'utilise des transformers ou des RNNs pour prédire l'énergie libre, donc notre méthode serait originale dans ce domaine.
-
-
-
+\section*{Currenctly used classical algorithms (State of The Art)}
+There is currently little research and writing on learning 
+learning with deep learning algorithms. Instead, biology-specific algorithms 
+biology-specific algorithms are favoured, as well as clustering algorithms. 
+clustering algorithms. For example, this article from January 2023 uses 
+an original algorithm that combines clustering methods to find an optimal 
+an optimal aptamer from a selection. 
+https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
+However, some recent papers use deep learning. 
+"Machine learning guided aptamer refinement 
+and discovery" (https://www.nature.com/articles/s41467-021-22555-9) 
+uses a standard MLP neural network to find the most compatible (high affinity) aptamers 
+compatible (high affinity) aptamers with target molecules. The estimation of 
+free energy is a sub-step of the affinity calculation. It performs a 
+truncation step to minimise the length of the aptamer without altering its properties. 
+Another deep learning model with aptamers is AptaNet 
+(https://www.nature.com/articles/s41598-021-85629-0). This model uses an 
+MLP and a CNN to learn the relationship between aptamers and target proteins 
+proteins (Aptamere-protein relations or API). The MLP works best, with a 
+test accuracy of 91.38%. This neural network performs significantly better than more traditional 
+algorithms such as SVM, KNN and random forests. This model 
+uses a very detailed database containing numerous auxiliary variables 
+measured in the laboratory for each individual, but with only 1000 individuals. 
+No published aptamer model uses transformers or RNNs to predict free energy, so the 
+predict free energy, so our method would be original in this field.
 \bibliography{bibliography}
 \bibliographystyle{plain}
 \end{document}
