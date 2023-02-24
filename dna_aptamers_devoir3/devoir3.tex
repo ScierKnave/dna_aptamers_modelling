@@ -6,7 +6,7 @@
     \and
     Dereck Piché (matricule 20177385)
     \and
-    Jonas Gabirot (matricule x)
+    Jonas Gabirot (matricule 20185863)
 }
 
 
@@ -36,11 +36,13 @@ entre les éléments de l'entrée, (...) Positional encodings ()
 \subsection*{G-flow nets}
 *insert*
 
-\section*{Prédiction avec Algorithmes classiques}
-\subsection*{Algorithmes classiques utilisés}
-*Brève description et infos sur les performances*
-\subsection*{Algorithmes classiques utilisés}
-*insert*
+\section*{Algorithmes utilisés présentement (State of The Art)}
+Il existe présentement peu de recherches et d'articles sur l'apprentisage des aptamères avec des algorithmes d'apprentissage profond. Des algorithmes propres à la biologie sont plutôt favorisés, ainsi que des algorithmes de regroupement (clustering). Par exemple, cet article de janvier 2023 utilise un algorithme original qui combine des méthodes de regroupement pour trouver un aptamère optimal parmi une sélection. https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
+Cependant, quelques articles récents utilisent l'apprentissage profond. "Machine learning guided aptamer refinement and discovery" (https://www.nature.com/articles/s41467-021-22555-9) fait appel à un réseau neuronal standard MLP pour trouver les aptamères les plus compatibles (high affinity) avec des molécules cibles. L'estimation de l'énergie libre est une sous-étape du calcul de l'affinité. Il performe une étape de troncage pour minimiser la longueur de l'aptamère sans altérer ses propriétés. 
+Un autre modèle d'apprentissage profond avec des aptamères est AptaNet (https://www.nature.com/articles/s41598-021-85629-0). Ce modèle utilise un MLP et un CNN pour apprendre la relation entre des aptamères et des protéines cibles (Aptamere-protein relations ou API). Le MLP fonctionne le mieux, avec une précision de test de 91.38%. Ce réseau neuronal est nettement plus performant que des algorithmes plus traditionnels comme SVM, KNN et les forêts aléatoires. Ce modèle utilise une base de données très détaillées contenant de nombreuses variables auxiliaires mesurées en laboratoire pour chaque individu, mais n'ayant que 1000 individus. 
+Aucun modèle sur les aptamères publié n'utilise des transformers ou des RNNs pour prédire l'énergie libre, donc notre méthode serait originale dans ce domaine.
+
+
 
 \bibliography{bibliography}
 \bibliographystyle{plain}
