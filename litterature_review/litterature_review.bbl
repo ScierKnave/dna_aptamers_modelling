@@ -1,7 +1,7 @@
 \begin{thebibliography}{1}
 
 \bibitem{transformers}
-Ashish Vaswani~& al.
+Ashish Vaswani et~al.
 \newblock Attention is all you need.
 \newblock {\em CoRR}, abs/1706.03762, 2017.
 

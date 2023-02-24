@@ -1,5 +1,5 @@
 \documentclass{article}
-\title{Devoir 3: Revue of the litterature}
+\title{Review of the litterature}
 \author
 {
     Guillermo Martinez (matricule x)
@@ -26,28 +26,26 @@
 The broad definition of a recurrent neural network 
 is that there are some cycles in the layers. 
 Typical recurrent network adapted for sequences 
-imply the recording of a certain state in the network, 
-which is called the hidden state of the reference neural network. 
-Most classical recurrent neural networks were not made to be used for 
-parallelization, which means that you have to process each token one at 
-a time. One advantage of recurrent neural network is that they grow 
+record previous outputs by storing information in the so called
+hidden state of the network. Since you have to process each token one at 
+a time, their is no parallelization. 
+One advantage of recurrent neural network is that they grow 
 linearly with respect to the amount of tokens as input, which means 
-that you can input a really, really huge. Um input, and it will still 
-work, which is different from transformers, because the complexity 
-implies a quadratic term over the number of input tokens, which makes 
-it practically impossible for large documents. However, for our 
-particular problem, transformers should have no problem at. At processing 
-tokens, tokens in the range of 
-treaty to 100, which is what is? Actually relevant. And with respect to abdomirrs?
+that their really isn't a practical limit to the number of tokens that
+it can process with reasonable time complexity. 
 \subsection*{Transformers}
-According to our assumptions, the *transformer* architecture is by far the most appropriate
-most appropriate for our task. Transformers use a multi-headed 
-a multi-headed attention mechanism and self-attention. Let
-be a sequence of input tokens. Then the attention mechanism 
-mechanism will create for each input token another token which is a 
-linear combination of the other given input vectors. Thus, 
-we \cite{transformers}. As we assume a strong correlation 
-between the input elements, (...) Positional encodings ()
+According to our assumptions, the transformer 
+architecture \cite{transformers} is by far the most appropriate
+for our task. Transformers use a multi-headed 
+attention mechanism and self-attention. Let
+be $t_1, \dots, t_n$ be a sequence of input tokens. Then a single 
+head will create for each input token $t_i$ an output $y_i$ which is a 
+linear combination of the other tokens given as input. It's complexity
+is $O(kn^2)$, where k are factors independant of input size. This process is 
+repeated for multiple heads with different parameters (learned). Their
+outputs are concatened and fed into a fully connected network that combines 
+their ouputs. The architecture is complex and impractical to spell out
+in greater detail here.
 
 \subsection*{G-flow nets}
 *insert*

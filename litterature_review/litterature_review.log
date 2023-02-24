@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  24 FEB 2023 10:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  24 FEB 2023 10:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/dna_aptamers_devoir3/devoir3.tex
-(c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/dna_aptamers_devoir3/devoir3.tex
+**c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex
+(c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-02> (C:\Users\piche\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -26,8 +26,8 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count193
 \l__pdf_internal_box=\box51
-) (devoir3.aux)
-\openout1 = `devoir3.aux'.
+) (litterature_review.aux)
+\openout1 = `litterature_review.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -49,48 +49,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
-
-
-LaTeX Warning: Citation `transformers' on page 1 undefined on input line 49.
-
-[1
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 41.
+ [1
 
 {C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (0.443pt too wide) in paragraph at lines 55--55
+Overfull \hbox (0.443pt too wide) in paragraph at lines 53--53
 []\OT1/cmr/bx/n/14.4 Currenctly used clas-si-cal al-go-rithms (State of The
  []
 
-(devoir3.bbl
-devoir3.bbl:4: Misplaced alignment tab character &.
-l.4 Ashish Vaswani~&
-                     al.
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-) [2] (devoir3.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(litterature_review.bbl) [2] (litterature_review.aux) ) 
 Here is how much of TeX's memory you used:
  465 strings out of 476374
- 9435 string characters out of 5788854
+ 9602 string characters out of 5788854
  1855340 words of memory out of 5000000
- 20920 multiletter control sequences out of 15000+600000
- 516888 words of font info for 47 fonts, out of 8000000 for 9000
+ 20921 multiletter control sequences out of 15000+600000
+ 516580 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,38p,272b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on devoir3.pdf (2 pages, 90718 bytes).
+<C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on litterature_review.pdf (2 pages, 106989 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
