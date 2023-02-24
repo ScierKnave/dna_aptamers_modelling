@@ -30,12 +30,12 @@ that we are only dealing with 4 different possible elements as our tokens
 
 \subsection*{Reccurent Neural Networks}
 The broad definition of a recurrent neural network 
-is that it is the subclass of neural networks \cite{lstms} wich have cycles in the layers. 
+is that it is the subclass of neural networks \cite{lstms} which have cycles in the layers. 
 RNN's were the default deep learning models used for sequences
 of tokens for a while, until the recent rise of transformers (especially LTSM RNN's) 
 These RNN's processed multiple tokens one at a time by storing information in the so called
 hidden state of the network. Since you have to process each token one at 
-a time, their is no parallelization. 
+a time, there is no parallelization. 
 One advantage of recurrent neural network is that they grow 
 linearly with respect to the amount of tokens as input, which means 
 that their really isn't a practical limit to the number of tokens that
@@ -49,7 +49,7 @@ be $t_1, \dots, t_n$ be a sequence of input tokens. Then a single
 head will create for each input token $t_i$ an output $y_i$ which is a 
 linear combination of the other tokens given as input. It's complexity
 is $O(kn^2)$, where k are factors independant of input size. This process is 
-repeated for multiple heads with different parameters (learned). Their
+repeated for multiple heads with different parameters (which are learned). Their
 outputs are concatened and fed into a fully connected network that combines 
 their ouputs. The architecture is complex and impractical to spell out
 in greater detail here.
