@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  23 FEB 2023 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  24 FEB 2023 09:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -49,19 +49,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
- [1
+
+Overfull \hbox (13.63048pt too wide) in paragraph at lines 40--44
+\OT1/cmr/m/n/10 mal parmi une s^^Selection. https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
+ []
+
+
+Overfull \hbox (61.5008pt too wide) in paragraph at lines 40--44
+\OT1/cmr/m/n/10 learn-ing guided ap-tamer re-fine-ment and dis-cov-ery" (https://www.nature.com/articles/s41467-
+ []
+
+
+Overfull \hbox (6.63022pt too wide) in paragraph at lines 40--44
+\OT1/cmr/m/n/10 tam^^Reres les plus com-pat-i-bles (high affin-ity) avec des mol^^Secules cibles. L'estimation
+ []
+
+[1
 
 {C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (devoir3.bbl) [2] (devoir3.aux) ) 
 Here is how much of TeX's memory you used:
- 466 strings out of 476374
- 9436 string characters out of 5788854
- 1854340 words of memory out of 5000000
- 20922 multiletter control sequences out of 15000+600000
+ 468 strings out of 476374
+ 9452 string characters out of 5788854
+ 1856340 words of memory out of 5000000
+ 20924 multiletter control sequences out of 15000+600000
  516580 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,38p,272b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 34i,7n,38p,783b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on devoir3.pdf (2 pages, 74920 bytes).
+Output written on devoir3.pdf (2 pages, 79729 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
