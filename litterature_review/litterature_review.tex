@@ -22,14 +22,15 @@
 \section*{Machine learning algorithms}
 \subsection*{Multilayer Perceptrons}
 This is the deep architecture that started it all 
-and the one we shall use as a basis since it does 
+and the one we shall use to create our baseline since it does 
 not posess any bias towards the positionning of 
-the different tokens. This is made possible by the fact 
-that we are only dealing with 4 different possible elements as our tokens.
+the different tokens. The use of MLP's is made possible by the fact 
+that we are only dealing with 4 different possible elements as our tokens
+(A,C,G,T).
 
 \subsection*{Reccurent Neural Networks}
 The broad definition of a recurrent neural network 
-is that it is the subclass of neural networks wich have cycles in the layers. 
+is that it is the subclass of neural networks \cite{transformers} wich have cycles in the layers. 
 RNN's were the default deep learning models used for sequences
 of tokens for a while, until the recent rise of transformers (especially LTSM RNN's) 
 These RNN's processed multiple tokens one at a time by storing information in the so called
