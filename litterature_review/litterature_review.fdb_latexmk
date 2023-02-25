@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex litterature_review"] 1677252514 "litterature_review.aux" "litterature_review.bbl" "litterature_review" 1677252517 0
+["bibtex litterature_review"] 1677295287 "litterature_review.aux" "litterature_review.bbl" "litterature_review" 1677295362 0
   "./bibliography.bib" 1677251677 612 6b7f25103557cf37efc37d4da4d7c47f ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "litterature_review.aux" 1677252515 122 45162bff59ff1738b121be5fc8713153 "pdflatex"
+  "litterature_review.aux" 1677295360 122 ebbf83f6b250685f30f446bc5b3367f7 "pdflatex"
   (generated)
   "litterature_review.bbl"
   "litterature_review.blg"
   (rewritten before read)
-["pdflatex"] 1677252514 "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" "litterature_review.pdf" "litterature_review" 1677252517 0
+["pdflatex"] 1677295359 "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" "litterature_review.pdf" "litterature_review" 1677295362 0
   "C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677104042 164247 3fcf05e94f4cbc9f0b6bc52b438dac54 ""
   "C:/Users/piche/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1676476110 23174347 05b8083dfcbde2b711ea46f6f88f90d4 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -33,10 +33,10 @@
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1669844196 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1669844196 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1673900822 30429 213676d4c7327a21d91ddaed900e7b81 ""
-  "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" 1677252507 3763 335470f985f56f03c65227a009db53a2 ""
-  "litterature_review.aux" 1677252515 122 45162bff59ff1738b121be5fc8713153 "pdflatex"
-  "litterature_review.bbl" 1677252514 185 829c2916988a1e0176f8c92a338d7c51 "bibtex litterature_review"
-  "litterature_review.tex" 1677252507 3763 335470f985f56f03c65227a009db53a2 ""
+  "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" 1677295358 9683 a6910585bb8a7eedd4c5b1f2e48a46c7 ""
+  "litterature_review.aux" 1677295360 122 ebbf83f6b250685f30f446bc5b3367f7 "pdflatex"
+  "litterature_review.bbl" 1677295287 185 829c2916988a1e0176f8c92a338d7c51 "bibtex litterature_review"
+  "litterature_review.tex" 1677295358 9683 a6910585bb8a7eedd4c5b1f2e48a46c7 ""
   (generated)
   "litterature_review.aux"
   "litterature_review.log"

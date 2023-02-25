@@ -44,9 +44,9 @@ INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 OUTPUT litterature_review.pdf
 INPUT C:\Users\piche\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\piche\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\litterature_review.bbl
 INPUT litterature_review.bbl
 INPUT .\litterature_review.bbl
