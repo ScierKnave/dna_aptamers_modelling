@@ -24,16 +24,16 @@
 This is the deep architecture that started it all 
 and the one we shall use to create our baseline since it does 
 not posess any bias towards the positionning of 
-the different tokens. The use of MLP's is made possible by the fact 
+the different tokens. The use of MLPs is made possible by the fact 
 that we are only dealing with 4 different possible elements as our tokens
 (A,C,G,T).
 
 \subsection*{Reccurent Neural Networks}
 The broad definition of a recurrent neural network 
 is that it is the subclass of neural networks \cite{lstms} which have cycles in the layers. 
-RNN's were the default deep learning models used for sequences
-of tokens for a while, until the recent rise of transformers (especially LTSM RNN's) 
-These RNN's processed multiple tokens one at a time by storing information in the so called
+RNNs (especially LTSM RNNs) were the default deep learning models used for sequences
+of tokens for a while, until the recent rise of transformers 
+These RNNs processed multiple tokens one at a time by storing information in the so called
 hidden state of the network. Since you have to process each token one at 
 a time, there is no parallelization. 
 One advantage of recurrent neural network is that they grow 
@@ -59,7 +59,7 @@ in greater detail here.
 
 \section*{Currenctly used classical algorithms (State of The Art)}
 There is currently little research and writing on learning 
-learning with deep learning algorithms. Instead, biology-specific algorithms 
+aptamer properties with deep learning algorithms. Instead, biology-specific algorithms 
 biology-specific algorithms are favoured, as well as clustering algorithms. 
 clustering algorithms. For example, this article from January 2023 uses 
 an original algorithm that combines clustering methods to find an optimal 
@@ -68,20 +68,17 @@ https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
 However, some recent papers use deep learning. 
 "Machine learning guided aptamer refinement 
 and discovery" (https://www.nature.com/articles/s41467-021-22555-9) 
-uses a standard MLP neural network to find the most compatible (high affinity) aptamers 
-compatible (high affinity) aptamers with target molecules. The estimation of 
-free energy is a sub-step of the affinity calculation. It performs a 
+uses a standard MLP neural network to find the most compatible (high affinity) aptamers with target molecules. The estimation of free energy is a sub-step of the affinity calculation. It performs a 
 truncation step to minimise the length of the aptamer without altering its properties. 
 Another deep learning model with aptamers is AptaNet 
 (https://www.nature.com/articles/s41598-021-85629-0). This model uses an 
 MLP and a CNN to learn the relationship between aptamers and target proteins 
 proteins (Aptamere-protein relations or API). The MLP works best, with a 
 test accuracy of 91.38%. This neural network performs significantly better than more traditional 
-algorithms such as SVM, KNN and random forests. This model 
+algorithms such as SVM, KNN and random forests. However, this model 
 uses a very detailed database containing numerous auxiliary variables 
 measured in the laboratory for each individual, but with only 1000 individuals. 
-No published aptamer model uses transformers or RNNs to predict free energy, so the 
-predict free energy, so our method would be original in this field.
+No published aptamer model uses transformers or RNNs to predict free energy, so our method would be original in this field.
 \bibliography{bibliography}
 \bibliographystyle{plain}
 \end{document}
