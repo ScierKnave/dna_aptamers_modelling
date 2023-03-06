@@ -1,13 +1,5 @@
 # Fdb version 4
-["bibtex litterature_review"] 1677295506 "litterature_review.aux" "litterature_review.bbl" "litterature_review" 1677295679 0
-  "./bibliography.bib" 1677251677 612 6b7f25103557cf37efc37d4da4d7c47f ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "litterature_review.aux" 1677295677 158 afa009c76690b3ef006aecf13ce20013 "pdflatex"
-  (generated)
-  "litterature_review.bbl"
-  "litterature_review.blg"
-  (rewritten before read)
-["pdflatex"] 1677295677 "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" "litterature_review.pdf" "litterature_review" 1677295679 0
+["pdflatex"] 1677616730 "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" "methodology.pdf" "methodology" 1677616731 0
   "C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1677104042 164247 3fcf05e94f4cbc9f0b6bc52b438dac54 ""
   "C:/Users/piche/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1676476110 23174347 05b8083dfcbde2b711ea46f6f88f90d4 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -21,24 +13,18 @@
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247593066 32080 340ef9bf63678554ee606688e7b5339d ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247593067 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247593067 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247593067 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247593067 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247593066 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247593067 32762 7fee39e011c23b3589931effd97b9702 ""
-  "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247593067 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1669844196 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1669844196 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1673900822 30429 213676d4c7327a21d91ddaed900e7b81 ""
-  "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/litterature_review/litterature_review.tex" 1677295676 10133 090d435e287b5f1339a71bebbbb90b2d ""
-  "litterature_review.aux" 1677295677 158 afa009c76690b3ef006aecf13ce20013 "pdflatex"
-  "litterature_review.bbl" 1677295507 321 c9621ea280fd0fd074a15e25a2ec3142 "bibtex litterature_review"
-  "litterature_review.tex" 1677295676 10133 090d435e287b5f1339a71bebbbb90b2d ""
+  "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" 1677616729 320 0c6bc4d8fbea970d63c53aa88a426101 ""
+  "methodology.aux" 1677616731 384 57991ba9a50f09ef5b5b944a00945ba2 "pdflatex"
+  "methodology.tex" 1677616729 320 0c6bc4d8fbea970d63c53aa88a426101 ""
   (generated)
-  "litterature_review.aux"
-  "litterature_review.log"
-  "litterature_review.pdf"
+  "methodology.aux"
+  "methodology.log"
+  "methodology.pdf"
   (rewritten before read)

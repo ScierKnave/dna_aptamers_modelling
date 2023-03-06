@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{lstms}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9.
+
 \bibitem{transformers}
 Ashish Vaswani et~al.
 \newblock Attention is all you need.
