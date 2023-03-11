@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1678138839 "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" "methodology.pdf" "methodology" 1678138840 0
+["pdflatex"] 1678544478 "c:/Users/piche/Documents/Dede's Codebase/University Code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" "methodology.pdf" "methodology" 1678544479 0
   "C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1678053663 165845 8aee058393c0fb515cf2f24f28a2727d ""
   "C:/Users/piche/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1676476110 23174347 05b8083dfcbde2b711ea46f6f88f90d4 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -20,9 +20,9 @@
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1669844196 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1669844196 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
   "C:/Users/piche/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1673900822 30429 213676d4c7327a21d91ddaed900e7b81 ""
-  "c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" 1678138839 340 c9831cd6ec22df08f7e7152b68ab5ead ""
-  "methodology.aux" 1678138840 476 a7e1e23154a26b3f896bc39a328e7b29 "pdflatex"
-  "methodology.tex" 1678138839 340 c9831cd6ec22df08f7e7152b68ab5ead ""
+  "c:/Users/piche/Documents/Dede's Codebase/University Code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex" 1678544477 548 05d914c37036daa5acaca9c2d13f9fbb ""
+  "methodology.aux" 1678544478 575 272298dbedaab8f94059c7f55006b412 "pdflatex"
+  "methodology.tex" 1678544477 548 05d914c37036daa5acaca9c2d13f9fbb ""
   (generated)
   "methodology.aux"
   "methodology.log"
