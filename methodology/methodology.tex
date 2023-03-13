@@ -16,10 +16,56 @@
 
 
 \section{Planned Methodology}
-\section{Deep Models}
+\subsection{Training dataset}
+First, we will have to generate our training data. We shall implement a 
+simple python script which uses the NUPACK python library in order
+to generate a .json file containing our training data. We generated 
+a regressively labeled DNA strands of length $30$.
+\subsection{Baseline Algorithms}
+
+\subsubsection{Multilayered Perceptron}
+
+\subsubsection{AdaBoost}
+
+
+\subsection{Advanced Algorithms}
+
+\subsubsection{Recurrent Neural Network}
+
+\subsubsection{Tranformer}
+\paragraph{Architecture}
 The transformer architecture was initially made to translate text.
-Now, it is mostly used as a "next token" prediction tool. 
-However, we are mostly dealing with a regression task. 
+However, it's subsequent use was mostly tied to token generation. 
+This use only required the decoder to be part of the architecture, 
+and recursively fed the predicted token in the current input while 
+truncating if the input size was over the limit.
+Our task is vastly different. We are dealing with a regressive task,
+since we are trying to learn a function of the form $R^n \mapsto R$.
+Thus, we shall only keep the decoder part of the transformer architecture. 
+We only need to set the feedworward neural network in the decoder such that 
+it only has one output neuron.
+\paragraph{Cost Function}
+Since this is a regressive task, we shall use various instances of the 
+$l_p$-norm as our cost function.
+
+\paragraph{Tokenisation}
+
+\paragraph{Positionnal Embedding}
+We will train and compare our the accuracy of our decoder-only tranformer with 
+respect to the absence and inclusion of positionnal embedding to the input tokens.
+
+\paragraph{Advantages}
+What makes the decoder-only transformer different from other models? What are
+we taking advantage of by it's use? As opposed to recurrent neural networks, 
+this model is less sequential in nature. We are predicting by 
+taking the sequence of tokens all at once. We have high hopes for the 
+distributivity of attention made possible by the head multiplicity.
+We can imagine that there is high importance between the ends of the DNA 
+sequence, and at the center. A transformer, given enough data, would 
+be able to take advantage of this structure in order to simplify the task.
+
+
+\subsection{Form of result analysis}
 
 \section{Preliminary Results and Challenges Ahead}
 
