@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  6 MAR 2023 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  13 MAR 2023 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex
-(c:/Users/piche/Documents/dereck_codebase/udem_code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex
+**"c:/Users/piche/Documents/Dede's Codebase/University Code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex"
+(c:/Users/piche/Documents/Dede's Codebase/University Code/ift_3710/dna_aptamers_modelling/methodology/methodology.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-02> (C:\Users\piche\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -54,14 +54,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {C:/Users/piche/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (methodology.aux) ) 
 Here is how much of TeX's memory you used:
  454 strings out of 476374
- 9185 string characters out of 5788854
+ 9233 string characters out of 5788854
  1851340 words of memory out of 5000000
  20914 multiletter control sequences out of 15000+600000
  515927 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,38p,262b,205s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 34i,7n,38p,270b,205s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/piche/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on methodology.pdf (1 page, 46986 bytes).
+Output written on methodology.pdf (1 page, 46943 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
