@@ -1,5 +1,5 @@
 \documentclass{article}
-
+\usepackage{amsmath}
 \title{Methodology}
 
 \author
@@ -19,8 +19,8 @@
 \subsection{Training dataset}
 First, we will have to generate our training data. We shall implement a 
 simple python script which uses the NUPACK python library in order
-to generate a .json file containing our training data. We generated 
-a regressively labeled DNA strands of length $30$.
+to generate a .json file containing our training data. We randomely 
+generated a regressively labeled datasets of a milion DNA strands of length $30$.
 \subsection{Baseline Algorithms}
 
 \subsubsection{Multilayered Perceptron}
@@ -48,8 +48,16 @@ it only has one output neuron.
 Since this is a regressive task, we shall use various instances of the 
 $l_p$-norm as our cost function.
 
-\paragraph{Tokenisation}
-
+\paragraph{Tokenisation and encoding}
+Since the tranformer learns the embedding in the attention heads, we
+shall simply use an integer mapping for the set of tokens $\{A,C,G,T\}$.
+\begin{equation}
+    \begin{cases}
+        1 & a \\
+        2 & a 
+    \end{cases}
+\end{equation}
+as opposed to one-hot encoding.
 \paragraph{Positionnal Embedding}
 We will train and compare our the accuracy of our decoder-only tranformer with 
 respect to the absence and inclusion of positionnal embedding to the input tokens.
