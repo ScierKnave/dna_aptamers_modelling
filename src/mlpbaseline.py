@@ -134,3 +134,4 @@ with torch.inference_mode():
 
 avgloss = totalloss/100000
 print(avgloss)
+#Epoch 1: Test loss = 1.020, Epoch 2: Test loss = 1.000 
