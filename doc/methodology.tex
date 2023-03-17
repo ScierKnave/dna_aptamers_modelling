@@ -18,6 +18,7 @@ Let us briefly resume our task once again in order to make this document
 self-contained. Our task is to create models capable of reproducing 
 the classical algorithms used by the NUPACK foundation to predict the 
 free energy ($\in R$) of a DNA strand (a sequence of the elements of $\{A,C,G,T\}$).
+TODO mention the size of our generated dataset
 
 \section{Planned Methodology}
 \subsection{Training dataset}
@@ -85,6 +86,8 @@ one-hot encoding. This is done partly due to the way the Pytorch library works.
 We will train and compare our the accuracy of our decoder-only tranformer with 
 respect to the absence and inclusion of positionnal embedding to the input tokens.
 
+TODO add information on the decoder
+TODO specify the training validation split
 
 \paragraph{Advantages}
 What makes the decoder-only transformer different from other models? What are
