@@ -17,7 +17,7 @@
 Let us briefly resume our task once again in order to make this document
 self-contained. Our task is to create models capable of reproducing 
 the classical algorithms used by the NUPACK foundation to predict the 
-free energy ($\in R$) of a DNA strand (a sequence of the elements of $\{A,C,G,T\}$)
+free energy ($\in R$) of a DNA strand (a sequence of the elements of $\{A,C,G,T\}$).
 
 \section{Planned Methodology}
 \subsection{Training dataset}
@@ -29,8 +29,9 @@ generated a regressively labeled datasets of a milion DNA strands of length $30$
 
 \subsubsection{Multilayered Perceptron}
 
-\subsubsection{AdaBoost}
-Canceled.
+\subsubsection{Decision trees with AdaBoost}
+We might want to use this as a baseline. 
+
 
 \subsection{Advanced Algorithms}
 
@@ -97,11 +98,19 @@ be able to take advantage of this structure in order to simplify the task.
 
 
 \subsection{Comparisons and analysis}
-It would be more logical.
+It would be more logical to compare learned models with a similar 
+number of parameters. This would give us more information as 
+to if the comparative advantages were caused by the particularities 
+of the architecture or simply because of the increase of expressivity 
+tied to bigger models.
 
 \section{Preliminary Results and Challenges Ahead}
 
 \section{Changes from the initial plan}
+We have not strayed afar from the original plan. We 
+are only more sure that time will lack to implement 
+generative models like we intended after the attempt at reproducing
+the aforementionned NUPACK classical algorithm.
 
 \bibliography{bibliography}
 \bibliographystyle{plain}
