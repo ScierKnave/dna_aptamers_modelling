@@ -13,7 +13,8 @@
 \maketitle
 
 \section{Task}
-
+Let us briefly resume our task once again in order to make this document
+self-contained.
 
 \section{Planned Methodology}
 \subsection{Training dataset}
@@ -22,15 +23,19 @@ simple python script which uses the NUPACK python library in order
 to generate a .json file containing our training data. We randomely 
 generated a regressively labeled datasets of a milion DNA strands of length $30$.
 \subsection{Baseline Algorithms}
-\cite{jeddi2017three}
+
 \subsubsection{Multilayered Perceptron}
 
 \subsubsection{AdaBoost}
-
+Canceled.
 
 \subsection{Advanced Algorithms}
 
 \subsubsection{Recurrent Neural Network}
+Recurrent neural network (RNN) is a deep lRecurrent neural network 
+(RNN) is a deep learning architecture used for sequential data prediction
+using both current and past inputs. earning architecture used for sequential 
+data prediction using both current and past inputs. 
 
 \subsubsection{Tranformer}
 \paragraph{Architecture}
@@ -48,19 +53,14 @@ it only has one output neuron.
 Since this is a regressive task, we shall use various instances of the 
 $l_p$-norm as our cost function.
 
-\paragraph{Tokenisation and encoding}
-Since the tranformer learns the embedding in the attention heads, we
-shall simply use an integer mapping for the set of tokens $\{A,C,G,T\}$.
-\begin{equation}
-    \begin{cases}
-        1 & a \\
-        2 & a 
-    \end{cases}
-\end{equation}
-as opposed to one-hot encoding.
-\paragraph{Positionnal Embedding}
+\paragraph{Tokenisation, encoding, positionnal encoding}
+Since the tranformer learns the embedding in the attention heads, \cite{transformers} we
+shall simply use an integer mapping for the set of tokens $\{A,C,G,T\}$ as opposed to 
+one-hot encoding. This is done partly due to the way the Pytorch library works.
+
 We will train and compare our the accuracy of our decoder-only tranformer with 
 respect to the absence and inclusion of positionnal embedding to the input tokens.
+
 
 \paragraph{Advantages}
 What makes the decoder-only transformer different from other models? What are
