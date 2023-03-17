@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \title{Methodology}
 
 \author
@@ -14,7 +15,9 @@
 
 \section{Task}
 Let us briefly resume our task once again in order to make this document
-self-contained.
+self-contained. Our task is to create models capable of reproducing 
+the classical algorithms used by the NUPACK foundation to predict the 
+free energy ($\in R$) of a DNA strand (a sequence of the elements of $\{A,C,G,T\}$)
 
 \section{Planned Methodology}
 \subsection{Training dataset}
@@ -36,6 +39,26 @@ Recurrent neural network (RNN) is a deep lRecurrent neural network
 (RNN) is a deep learning architecture used for sequential data prediction
 using both current and past inputs. earning architecture used for sequential 
 data prediction using both current and past inputs. 
+
+it in a simple way, RRN architectures are composed of an encoder and a decoder. The initial input is vectorized by the encoder and processed as a function of the initial state, which is random at first. As a result, the encoder's weights and biases are adjusted in the form a second state to incorporate both current and past input information. The encoder recursively processes the following vectorized inputs as functions of current states, while updating the weights and biases of current states to produce new states at each iteration. The encoder terminates this recursion when it has iterated over an entire sequence of features and concludes by transmitting its final state, which incorporates all previous states, to the decoder. In the case of a many-to-one RNN underlying architecture, this paper's architecture of interest, the decoder produces one output prediction as a function of the final state received from the encoder and as a function of its own current state, random at first. By contrasting the predicted output value to the actual value of the sequence, the decoder performs gradient descent to minimize the loss function, updates its current state and backpropagates it to the encoder's states. Once the weights and biases of the encoder states are adjusted, it iterates over the following sequence of features following the same recursion procedure. This recursive process is repeated for the entire length of sequences within the training set, and the regression model is cross-validated on its ability to minimize the squared mean error between target and predicted output values in the validation and test set. 
+\begin{figure}
+    \caption{Illustration of RNN architecures}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-42-13.png}
+\end{figure}
+
+RNNs are not without challenges. In order to update parameters, the backpropagation algorithm needs to calculate gradients at each different step. This usually results in unstable neural networks due to vanishing and exploding gradients which are unable to learn long-term dependencies. Long Short Term Memory networks (LSTMs) have been proposed to avoid these problems and designed to handle long-term dependencies. Initially proposed by Hochreiter and Schmidhuber (1997),  LSTMs use cells with input, output and forget-gate to control the flow of information. 
+\begin{figure}
+    \caption{Long Short Term Memory cell}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-38-22.png}
+\end{figure}
+
+
+
+Given this paper's task to predict the level of free energy given a sequence of 30 features, we will train a many-to-one LSTMs for a regression task with multiple input time series. We will divide our entire dataset in train $80\%$, validation $20\%$. For each training instance, we will give the model a sequence of observations and a corresponding target value. The goal will be to forecast time series' free energy within the validation set. Time given, hyperparameter tuning will be performed on the validation set to optimize the choice of the learning rate, the number of units or layers, and the weight regularization techniques used as penalties on the loss function. Finally, the tunned model's prediction accuracy will be calculated on the test set using Root Mean Squared Error (RMSE) and Mean Absolute Error (MAE) metrics. 
+\begin{figure}
+    \caption{Information flow}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-41-25.png}
+\end{figure}
 
 \subsubsection{Tranformer}
 \paragraph{Architecture}
@@ -73,7 +96,8 @@ sequence, and at the center. A transformer, given enough data, would
 be able to take advantage of this structure in order to simplify the task.
 
 
-\subsection{Form of result analysis}
+\subsection{Comparisons and analysis}
+It would be more logical.
 
 \section{Preliminary Results and Challenges Ahead}
 
