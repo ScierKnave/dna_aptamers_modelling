@@ -24,11 +24,19 @@ TODO mention the size of our generated dataset
 \subsection{Training dataset}
 First, we will have to generate our training data. We shall implement a 
 simple python script which uses the NUPACK python library in order
-to generate a .json file containing our training data. We randomely 
-generated a regressively labeled datasets of a milion DNA strands of length $30$.
+to generate a .json file containing our training data. We  
+generated a dataset of a milion random DNA strands of length $30$, paired with their free energy as calculated by NUPACK.
 \subsection{Baseline Algorithms}
 
 \subsubsection{Multilayered Perceptron}
+A multilayer perceptron (MLP) is a type of artificial neural network that consists of multiple layers of interconnected nodes organized into an input layer, one or more hidden layers, and an output layer. Each node in the MLP receives input signals from nodes in the previous layer, applies a non-linear activation function, in our case ReLU, to the weighted sum of those inputs, and passes the resulting output signal to nodes in the next layer. The weights between the nodes are learned through a process called backpropagation, where the network adjusts its internal parameters to minimize the difference between its predicted outputs and the actual target outputs. MLPs are widely used for supervised learning tasks such as classification and regression, and have been applied in areas such as computer vision, speech recognition, and natural language processing. Unlike transformers and RNNs, MLPs make no assumption about the sequential nature of the input data. In this way, an MLP is a more general algorithm and is thus well-suited to be a baseline comparison to test our assumptions about the data. For preliminary testing, we shall use an MLP with 10 hidden layers and an input size of 120, (30 bases of DNA one-hot encoded). We shall use the Adam optimizer as it is the most commonly used optimizer.
+
+\paragraph{Cost Function}
+Since this is a regression task, we shall use the Mean Squared Error (MSE) as the loss function.
+
+\paragraph{Encoding}
+To feed a string input to an MLP, we shall convert each base (A,C,T,G) to a one-hot encoded vector. With 4 categories and sequences of length 30, this gives an input size of 120.
+
 
 \subsubsection{Decision trees with AdaBoost}
 We might want to use this as a baseline. 
@@ -109,6 +117,12 @@ tied to bigger models.
 
 \section{Preliminary Results and Challenges Ahead}
 
+\subsection{Multilayered Perceptron}
+Our MLP with 10 hidden layers and 88 281 parameters trained on 90\% of the data set and tested on 10\% of it gives the following results:
+
+Epoch 1: Test MSE loss of 1.02
+
+Epoch 2: Test MSE loss of 1.00
 \section{Changes from the initial plan}
 We have not strayed afar from the original plan. We 
 are only more sure that time will lack to implement 
