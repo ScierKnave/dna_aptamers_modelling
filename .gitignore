@@ -235,3 +235,10 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+doc/methodology.bbl
+doc/methodology.aux
+doc/methodology.blg
+doc/methodology.fdb_latexmk
+doc/methodology.fls
+doc/methodology.log
+doc/methodology.synctex.gz
