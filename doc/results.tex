@@ -26,9 +26,11 @@
 \subsection{LSTM}
 
 \subsection{Regression Transformer}
-\begin{figure} \label{fig:template}
+We built a model using the main components of the Transfomer architecture proposed in \cite{transformers} for our regression task. Our regression transformer is made up of a sequence of encoder layers. Each of the encoder layers contains 8 attention heads with a ReLU activated linear layer. We trained the transformer on $9 ,000, 000$ DNA sequences of length $30$ and tested it's MSE loss on the remaining $100,000$ training examples. The transformer used the same positionnal encoding as the one proposed in \cite{transformers}. The DNA sequences came in string form. Each of the 4 tokens were transformed into an integer and fed into a learned embedding layer that transformed them into vectors of 16 dimensions. The number of dimensions of the embeddings is a bit arbitrary, but since it works really well we left it there. The accuracy troughout the epochs can be seen in figure \ref{fig:transformer_accuracy}. 
+
+\begin{figure} \label{fig:transformer_accuracy}
     \caption{Voici le template} \center
-    \includegraphics[width=0.7\textwidth]{images/2023-03-30-14-15-52.png}
+    \includegraphics[width=0.7\textwidth]{images/2023-04-02-13-48-49.png}
 \end{figure}
 
 \section{Analysis}
