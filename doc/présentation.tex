@@ -6,24 +6,114 @@
 \usetheme{metropolis}
 \metroset{block=fill} 
 
-\title{Modelisation d'Aptemeres d'ADN IFT 3710}
+\title{Modélisation d'Aptamères d'ADN IFT 3710}
 \author{Dereck Piché, Jonas Gabirot, Guillermo Martinez}
-\institute{Universite de Montreal}
-\date{Mars 2023}
+\institute{Université de Montréal}
+\date{Avril 2023}
 
 
 \begin{document}
 
 \frame{\titlepage}
 
-\
 \section{Contexte}
 
 \begin{frame}{Contexte}
+Les aptamères (du latin \emph{aptus} signifiant attaché) sont des séquences synthétiques d'ADN qui s'attachent à des molécules cibles soit pour les détecter, soit pour les neutraliser. Leur spécifité leur permet de s'attacher seulement à la cible voulue sans affecter leur environment.
+\end{frame}
+
+
+\begin{frame}{Contexte}
+L'énergie libre est une propriété des molécules qui représentent la capacité à "activer" des réactions de façon spontanée. 
+
+Un aptamère doit avoir une énergie libre correspondante à celle de la molécule cible pour s'y attacher. C'est une propriété nécessaire mais non suffisante.
+\end{frame}
+
+
+\begin{frame}{Objectif}
+Cependant, les molécules d'ADN sont assez larges et le calcul de l'énergie libre devient très complexe lorsque la taille des molécules augmentent. Notre objectif est donc d'entraîner un modèle capable de prédire l'énergie d'une séquence d'ADN quelconque, afin d'accélérer la recherche d'aptamère.
+\end{frame}
+
+
+\section{Baseline: MLP}
+\begin{frame}{MLP}
+
+Comme baseline, nous avons choisi un réseau MLP standard. Les MLPs ne font aucune supposition sur la structure de la séquence, ce qui permet de comparer avec d'autres modèles qui se basent sur des hypothèses différentes. Ils sont aussi faciles à implémenter et entraîner. 
+\begin{equation*}
+    \begin{CD}
+        @. Seq \in R^{120}
+        @>Lin. (\times 20)>> 
+        @>ReLU (\times 20)>> 
+        @>Lin.>> 
+        Énergie \in R
+    \end{CD}
+\end{equation*}
+
+\begin{block}{Hyperparamètres}
+\begin{enumerate}
+    \item Taux d'apprentissage: 0.0003
+    \item Nombre de paramètres: 1 005 241
+\end{enumerate}
+\end{block}
 
 \end{frame}
 
 
+\begin{frame}{Résultats du MLP}
+\begin{figure} \label{fig:mlp}
+    \caption{Précision du MLP selon MSE} \center
+    \includegraphics[width=0.7\textwidth]{images/mlp.png}
+\end{figure}
+\end{frame}
+
+
+\section{Long Short Term Memory (LSTM)}
+
+\begin{frame}{LSTM}
+Le modèle LSTM (Long Short-Term Memory) est une variante des réseaux de neurones récurrents (RNN) qui permet de mieux gérer les problèmes liés à la mémoire à long terme. Il utilise des portes, qui sont des fonctions non linéaires, pour contrôler l'information qui entre ou sort de la mémoire.
+\end{frame}
+
+
+\begin{frame}{Portes}
+
+Il y a trois types de portes : la porte d'oubli (forget gate) permet au modèle de décider ce qu'il faut oublier de la mémoire à long terme, la porte d'entrée (input gate) permet d'ajouter de nouvelles informations à la mémoire à long terme et la porte de sortie (output gate) permet de déterminer quelle information doit être renvoyée en sortie.
+\begin{figure} \label{fig:architecture_lstm}
+    \caption{Architecture LSTM} \center
+    \includegraphics[width=0.6\textwidth]{images/lstm-schema.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Architecture du LSTM}
+
+\begin{equation*}
+    \begin{CD}
+        @. Seq \in R^{120}
+        @>LSTM1>> 
+        @>LSTM2>> 
+        @>Lin.>> 
+        Énergie \in R
+    \end{CD}
+\end{equation*}
+
+\begin{block}{Hyperparamètres}
+\begin{enumerate}
+    \item Taux d'apprentissage: 0.0003
+    \item Nombre de paramètres: 1 008 991 
+    \item Dropout: 0.6
+\end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Résultats du LSTM}
+
+\begin{figure} \label{fig:lstm}
+    \caption{Précision du LSTM selon MSE} \center
+    \includegraphics[width=0.7\textwidth]{images/lstm.png}
+\end{figure}
+
+\end{frame}
 \section{Transformeurs}
 
 \begin{frame}{Attention}
@@ -99,13 +189,13 @@ Pour éviter des erreurs numériques. On épargne les détails.
     \caption{Précision du transformeur selon MSE} \center
     \includegraphics[width=0.7\textwidth]{images/2023-04-02-13-48-49.png}
 \end{figure}
-
+\end{frame}
+\begin{frame}{Comparaisons des résultats}
 \begin{figure}
-     \center
-    \includegraphics[width=0.1\textwidth]{images/images/2023-04-02-18-02-45.png}
+    \caption{MSE des 3 modèles} \center
+    \includegraphics[width=0.7\textwidth]{images/comparaison.png}
 \end{figure}
 \end{frame}
 
 
 \end{document}
-
