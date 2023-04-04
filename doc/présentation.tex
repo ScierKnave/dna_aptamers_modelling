@@ -34,7 +34,7 @@ Cette mesure de similarité est appelée l'attention.
         $\sum_{j} a(q, k_j) v_j$
     \end{block}
 Les transformeurs utilisent un système d'auto-attention, qui vise à produire
-une séquence transformée ou`' chaque jeton est codé en effectuant une somme pondérée des
+une séquence transformée dans laquelle chaque jeton est codé en effectuant une somme pondérée des
 autres jetons présents dans sa séquence (l'incluant).
     \begin{block}{Jeton codé}
         $t_{i}^{'} = \sum_{j} a(W^{q}t_{i}, W^{k}t_j) W^{v}t_j$
@@ -42,7 +42,7 @@ autres jetons présents dans sa séquence (l'incluant).
 \end{frame}
 
 \begin{frame}{Attention}
-Dans les transformeurs, on utilise une attention spéciale:
+Dans les transformeurs, on utilise une attention spéciale :
 \begin{block}{Attention au produit scalaire mis à l'échelle}
     \[ a(q, k) = softmax( \frac{q^Tk}{\sqrt{d}}) \]
 \end{block}
