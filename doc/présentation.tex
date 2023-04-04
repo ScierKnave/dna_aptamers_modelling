@@ -45,7 +45,7 @@ Comme baseline, nous avons choisi un réseau MLP standard. Les MLPs ne font aucu
         @>Lin. (\times 20)>> 
         @>ReLU (\times 20)>> 
         @>Lin.>> 
-        Énergie \in R
+        Energie \in R
     \end{CD}
 \end{equation*}
 
@@ -92,7 +92,7 @@ Il y a trois types de portes : la porte d'oubli (forget gate) permet au modèle 
         @>LSTM1>> 
         @>LSTM2>> 
         @>Lin.>> 
-        Énergie \in R
+        Energie \in R
     \end{CD}
 \end{equation*}
 
@@ -147,8 +147,7 @@ les deux vecteurs. Cela permet beaucoup de liberté au transformeur, qui obtient
 \begin{frame}{}
     
 {\bf Pourquoi le softmax?}
-La fonction softmax assure que les coefficients sommeront à 1. Donc, on assure que les 
-vecteurs de sortie de l'attention ne seront pas saturés. Ils n'auront pas des normes gigantesques pouvant causer des erreurs numériques. On peut aussi intuitivement voir l'intuition d'attention pour les coéfficients normalisés à 1.
+Pour que les coéfficients somment à 1. (*expliquer l'intuition)
 
 {\bf Pourquoi la division par la racine de la taille? }
 Pour éviter des erreurs numériques. On épargne les détails.
@@ -164,21 +163,29 @@ Pour éviter des erreurs numériques. On épargne les détails.
 \end{frame}
 
 \begin{frame}{Architecture du transformeur}
+\begin{figure} \label{fig:transformer}
+    \caption{Transformer de traduction dans AIAYN} \center
+    \includegraphics[width=0.5\textwidth]{images/2023-04-04-14-37-09.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Architecture du transformeur}
 \begin{equation*}
     \begin{CD}
         @. Seq \in R^{30}
         @>Emb.>> 
         @>Cod. (\times 3)>> 
-        @>Lin.>> 
-        @>ReLU>> Seq \in R
+        @>Lin.>> Energie \in R
     \end{CD}
 \end{equation*}
 
 \begin{block}{Hyperparamètres}
 \begin{enumerate}
-    \item Taux d'apprentissage:
+    \item Taux d'apprentissage: $10^{-4}$
+    \item Dimension d'embedding: 16
+    \item Nombre de têtes: 8
     \item Nombre de paramètres: 1 786 753 
-    \item Codage positionnel: Sin Cos du papier TODO
+    \item Codage positionnel: sincos (AIAYN)
 \end{enumerate}
 \end{block}
 \end{frame}
