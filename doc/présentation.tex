@@ -21,32 +21,35 @@
 \begin{frame}{ADN-Aptamères}
 \begin{block}{Propriétés fondamentales}
 \begin{enumerate}
-    \item Phénotype: affinité, se plie avec une fonction définie
-    \item Génotype (séquence): réplicable IN VITRO (SELEX)
+    \item Phénotype: affinité, se plie avec une fonction définie.
+    \item Génotype (séquence): réplicable IN VITRO (SELEX).
 \end{enumerate}
 \end{block}
 
 \begin{block}{Biosenseur}
 \begin{enumerate}
-    \item Structure chimique simple: 20-100 bases (insertion)
-    \item Liaison: changement conformationnel (signal)
-    \item Stabilité: supérieure aux ARN-aptamères
+    \item Structure chimique simple: 20-100 bases (insertion).
+    \item Liaison: changement conformationnel (signal).
+    \item Stabilité: supérieure aux ARN-aptamères.
 \end{enumerate}
 \end{block}
-\end{frame}
 
-\begin{frame}{Minimum free energy (MFE) structure}
 \begin{block}{Nanotechnologie et Computation}
 \begin{enumerate}
-    \item Stockage d'information: 2x supérieure au stockage binaire, pendant des milliers d'années
+    \item Stockage d'information: 2x supérieure au stockage binaire, pendant des milliers d'années.
     \item Qualité de stockage: dépend de la stabilité de la séquence.
 \end{enumerate}
 \end{block}
 
+\end{frame}
+
+\begin{frame}{Minimum free energy (MFE) structure}
+
 \begin{block}{Structure secondaire de l'ADN}
 \begin{enumerate}
-    \item Deux séquences (1D) qui se lient en une hélice (2D)
-    \item Stabilité: du pairage entre les bases des deux séquences, et donc de la taille et de l'arrangement des séquences
+    \item Même séquence ou deux séquences (1D) qui se lient en une hélice (2D).
+    \item Stabilité: du pairage entre les bases des deux séquences, et donc dépendant de la taille, de la composition et de l'arrangement des séquences.
+    \item Le pairage des bases des séquences d'ADN uni-dimensionnelles en des hélices deux-dimensionnelles tend à minimiser l'énergie libre après la transition de phase, tels les pôles d'un aimant à une température (et force ionique) donnée.
 \end{enumerate}
 \end{block}
 
@@ -62,18 +65,18 @@
 \end{frame}
 
 \begin{frame}{Objectif}
-L'estimation du MFE d'une séquence d'ADN se complexifie en fonction de sa longeur. Cependant, les méthodes thermodynamiques comme celle de NUPACK sont rapides et relativement précises.
+L'estimation du MFE d'une séquence d'ADN se complexifie en fonction de sa longeur. Cependant, les méthodes thermodynamiques comme celles de NUPACK sont rapides et relativement précises.
 
-Objectif de recherche: entraîner des modèles d'apprentissage machine à prédire le MFE des structures secondaire de séquences d'ADN de 30 bases.
+Objectif de recherche: entraîner des modèles d'apprentissage machine à prédire le Gibbs Free Energy (proxy pour le MFE) des structures secondaires de séquences d'ADN de 30 bases.
 
-Retombées: L'apprentissage de représentations pour la fonction du MFE (étant donné des entrées séquentielles) peuvent réduire l'espace de recherche de réseaux génératifs, tels que les GFlowNets, pour générer des séquences d'ADN stables en minimisant la fonction apprise du MFE.
+Retombées: L'apprentissage de représentations de la distribution du MFE en fonction de bases séquentielles d'un composé ADN peuvent réduire l'espace de recherche de réseaux génératifs, tels que les GFlowNets, pour générer des séquences d'ADN stables en minimisant la fonction apprise du MFE.
 
 \end{frame}
 
 \begin{frame}{Visualisation données}
 
 \begin{figure} \label{fig:MFE_nupack}
-    \caption{Distribution des MFEs dans notre dataset} \center
+    \caption{Distribution des Gibbs Free Energy dans notre dataset} \center
     \includegraphics[width=.7\textwidth]{images/MFE_nupack.png}
 \end{figure}
 
@@ -251,14 +254,15 @@ Pour éviter des erreurs numériques. On épargne les détails.
 
 Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75 avec MFE expérimentale.
 \begin{figure} \label{fig:MFE_exp_simul}
-    \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.35\textwidth]{images/MFE_exp_simul.png}
+    \caption{Association entre MFEs simulés et empiriques} \center
+    \includegraphics[width=0.7\textwidth]{images/MFE_exp_simul.png}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Suggestions d'étapes à suivre}
 \begin{enumerate}
+    \item Utiliser le MFE.
     \item Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
     \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
     \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
