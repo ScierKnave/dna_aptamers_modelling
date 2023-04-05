@@ -45,11 +45,13 @@
 
 \begin{frame}{Minimum free energy (MFE) structure}
 
-Pairage des bases des séquences d'ADN uni-dimensionnelles en des hélices deux-dimensionnelles tend à minimiser l'énergie libre après la transition de phase, tels les pôles d'un aimant à une température (et force ionique) donnée.
+Gibbs Free energy: potentiel thermodynamique (Work sur entourage), minimizé à l'équilibre chimique.
+Balance: Énergie, Entropie; transition de phase (Température, force ionique)
+Pairage des bases en  hélice tend à minimiser l'énergie (Aimants)
 
 \begin{figure} \label{fig:ADN_structure}
     \caption{Structures de l'ADN} \center
-    \includegraphics[width=0.35\textwidth]{images/DNA_structure.png}
+    \includegraphics[width=0.2\textwidth]{images/DNA_structure.png}
 \end{figure}
 
 \end{frame}
@@ -249,9 +251,9 @@ Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75
 \begin{frame}{Suggestions d'étapes à suivre}
 \begin{enumerate}
     \item Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
-    \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
-    \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
-    \item Compléter le protocole End-to-End-DNA (SELEX) avec les plus stables.
+    \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Re-entraîner au besoin.
+    \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE (au-delà de l'aléatoire).
+    \item Compléter le protocole End-to-End-DNA (SELEX) avec les plus séquences les plus stables.
 \end{enumerate}
 
 \end{frame}
