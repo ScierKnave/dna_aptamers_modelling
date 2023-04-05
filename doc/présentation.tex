@@ -215,8 +215,8 @@ Pour éviter des erreurs numériques. On épargne les détails.
 \begin{equation*}
     \begin{CD}
         @. Seq \in R^{30}
-        @>Vect. (Dim=16)>>
-        @>+Posit.>>
+        @>Vect. (Dim=16)>> 
+        @>+Posit.>> 
         @>Cod. (\times 3)>> 
         @>Lin.>> Energie \in R
     \end{CD}
@@ -254,15 +254,14 @@ Pour éviter des erreurs numériques. On épargne les détails.
 
 Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75 avec MFE expérimentale.
 \begin{figure} \label{fig:MFE_exp_simul}
-    \caption{Association entre MFEs simulés et empiriques} \center
-    \includegraphics[width=0.7\textwidth]{images/MFE_exp_simul.png}
+    \caption{Distribution des MFEs dans notre dataset} \center
+    \includegraphics[width=0.35\textwidth]{images/MFE_exp_simul.png}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Suggestions d'étapes à suivre}
 \begin{enumerate}
-    \item Utiliser le MFE.
     \item Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
     \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
     \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
