@@ -18,67 +18,21 @@
 \frame{\titlepage}
 
 \section{Contexte}
-\begin{frame}{ADN-Aptamères}
-\begin{block}{Propriétés fondamentales}
-\begin{enumerate}
-    \item Phénotype: affinité, se plie avec une fonction définie
-    \item Génotype (séquence): réplicable IN VITRO (SELEX)
-\end{enumerate}
-\end{block}
 
-\begin{block}{Biosenseur}
-\begin{enumerate}
-    \item Structure chimique simple: 20-100 bases (insertion)
-    \item Liaison: changement conformationnel (signal)
-    \item Stabilité: supérieure aux ARN-aptamères
-\end{enumerate}
-\end{block}
+\begin{frame}{Contexte}
+Les aptamères (du latin \emph{aptus} signifiant attaché) sont des séquences synthétiques d'ADN qui s'attachent à des molécules cibles soit pour les détecter, soit pour les neutraliser. Leur spécifité leur permet de s'attacher seulement à la cible voulue sans affecter leur environment.
 \end{frame}
 
-\begin{frame}{Minimum free energy (MFE) structure}
-\begin{block}{Nanotechnologie et Computation}
-\begin{enumerate}
-    \item Stockage d'information: 2x supérieure au stockage binaire, pendant des milliers d'années
-    \item Qualité de stockage: dépend de la stabilité de la séquence.
-\end{enumerate}
-\end{block}
 
-\begin{block}{Structure secondaire de l'ADN}
-\begin{enumerate}
-    \item Deux séquences (1D) qui se lient en une hélice (2D)
-    \item Stabilité: du pairage entre les bases des deux séquences, et donc de la taille et de l'arrangement des séquences
-\end{enumerate}
-\end{block}
+\begin{frame}{Contexte}
+L'énergie libre de Gibbs est une propriété des molécules qui représentent la capacité à faire du travail. Dans ce contexte, le travail à performer est l'attachement de l'aptamère avec la molécule cible. 
 
+Un aptamère doit avoir une énergie libre appropriée pour s'attacher à la molécule cible. C'est une condition nécessaire mais non suffisante.
 \end{frame}
 
-\begin{frame}{Minimum free energy (MFE) structure}
-
-\begin{figure} \label{fig:ADN_structure}
-    \caption{Structures de l'ADN} \center
-    \includegraphics[width=0.2\textwidth]{images/DNA_structure.png}
-\end{figure}
-
-Méthode NUPACK: estime MFE de la structure secondaire en fonction d'une analyse thermodynamique, Nearest-neighbor paramètres empiriques (Zadeh et al. 2010).
-
-\end{frame}
 
 \begin{frame}{Objectif}
-L'estimation du MFE d'une séquence d'ADN se complexifie en fonction de sa longeur. Cependant, les méthodes thermodynamiques comme celle de NUPACK sont rapides et relativement précises (r=70-80)
-
-Objectif de recherche: entraîner des modèles d'apprentissage machine à prédire le MFE des structures secondaire de séquences d'ADN de 30 bases.
-
-Retombées: L'apprentissage de représentations pour la fonction du MFE (étant donné des entrées séquentielles) peuvent réduire l'espace de recherche de réseaux génératifs, tels que les GFlowNets, pour générer des séquences d'ADN stables en minimisant la fonction apprise du MFE.
-
-\end{frame}
-
-\begin{frame}{Visualisation données}
-
-\begin{figure} \label{fig:MFE_nupack}
-    \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.5\textwidth]{images/MFE_nupack.png}
-\end{figure}
-
+Cependant, les molécules d'ADN sont assez larges et le calcul de l'énergie libre devient très complexe lorsque la taille des molécules augmentent. Notre objectif est donc d'entraîner un modèle capable de prédire l'énergie libre d'une séquence d'ADN quelconque, afin d'accélérer la recherche d'aptamère.
 \end{frame}
 
 \section{Baseline: MLP}
@@ -210,7 +164,7 @@ les deux vecteurs. Cela permet beaucoup de liberté au transformeur, qui obtient
 \begin{frame}{}
     
 {\bf Pourquoi le softmax?}
-Pour que les coéfficients somment à 1. (*expliquer l'intuition)
+Pour que les coéfficients somment à 1. (aussi parce que c'est facile à dériver et qu'on ne regarde pas juste les différences proportiennelles d'excitation, mais l'excitation absolue également (*insert nerd emoji)) *expliquer l'intuition pour l'attention
 
 {\bf Pourquoi la division par la racine de la taille? }
 Pour éviter des erreurs numériques. On épargne les détails.
