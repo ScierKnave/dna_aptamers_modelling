@@ -33,17 +33,15 @@
     \item Stabilité: supérieure aux ARN-aptamères
 \end{enumerate}
 \end{block}
+\end{frame}
 
+\begin{frame}{Minimum free energy (MFE) structure}
 \begin{block}{Nanotechnologie et Computation}
 \begin{enumerate}
     \item Stockage d'information: 2x supérieure au stockage binaire, pendant des milliers d'années
     \item Qualité de stockage: dépend de la stabilité de la séquence.
 \end{enumerate}
 \end{block}
-
-\end{frame}
-
-\begin{frame}{Minimum free energy (MFE) structure}
 
 \begin{block}{Structure secondaire de l'ADN}
 \begin{enumerate}
@@ -52,9 +50,13 @@
 \end{enumerate}
 \end{block}
 
+\end{frame}
+
+\begin{frame}{Minimum free energy (MFE) structure}
+
 \begin{figure} \label{fig:ADN_structure}
     \caption{Structures de l'ADN} \center
-    \includegraphics[width=0.35\textwidth]{images/DNA_structure.png}
+    \includegraphics[width=0.2\textwidth]{images/DNA_structure.png}
 \end{figure}
 
 Méthode NUPACK: estime MFE de la structure secondaire en fonction d'une analyse thermodynamique, Nearest-neighbor paramètres empiriques (Zadeh et al. 2010).
@@ -74,7 +76,7 @@ Retombées: L'apprentissage de représentations pour la fonction du MFE (étant 
 
 \begin{figure} \label{fig:MFE_nupack}
     \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.35\textwidth]{images/MFE_nupack.png}
+    \includegraphics[width=0.5\textwidth]{images/MFE_nupack.png}
 \end{figure}
 
 \end{frame}
@@ -160,6 +162,23 @@ Il y a trois types de portes : la porte d'oubli (forget gate) permet au modèle 
 \end{frame}
 \section{Transformeurs}
 
+\begin{frame}{Architecture du transformeur}
+    \begin{figure} \label{fig:transformer}
+        \caption{Transformer de traduction dans AIAYN} \center
+        \includegraphics[width=0.5\textwidth]{images/2023-04-04-14-37-09.png}
+    \end{figure}
+    \end{frame}
+
+\begin{frame}{Vectorisation}
+    Avant d'entrer dans le coeur du transformeur (les couches de codage), les séquences sont 
+    vectorisés. Le mécanisme de vectorisation est appris. Ensuite, il est
+    pratique courante de sommer un vecteur positionnel sur 
+    la vectorisation de la séquence. Ce vecteur, tel que son nom l'indique,
+    contient de l'information sur la position des jetons de la séquence.
+    Il existe plusieurs méthodes pour générer ce vecteur positionnel. Nous avons 
+    utilisé la méthode proposée dans le papier AIAYN.
+\end{frame}
+
 \begin{frame}{Attention}
 Un système d'attention retourne une somme des vecteurs \emph{Valeurs} selon 
 une mesure de similarité entre les vecteurs \emph{Requêtes} et les vecteurs \emph{Clés}.
@@ -206,18 +225,14 @@ Pour éviter des erreurs numériques. On épargne les détails.
     de dimension arbitraire.
 \end{frame}
 
-\begin{frame}{Architecture du transformeur}
-\begin{figure} \label{fig:transformer}
-    \caption{Transformer de traduction dans AIAYN} \center
-    \includegraphics[width=0.5\textwidth]{images/2023-04-04-14-37-09.png}
-\end{figure}
-\end{frame}
 
-\begin{frame}{Architecture du transformeur}
+
+\begin{frame}{Architecture de notre transformeur de régression}
 \begin{equation*}
     \begin{CD}
         @. Seq \in R^{30}
-        @>Emb.>> 
+        @>Vect. (Dim=16)>> 
+        @>+Posit.>> 
         @>Cod. (\times 3)>> 
         @>Lin.>> Energie \in R
     \end{CD}
@@ -226,7 +241,7 @@ Pour éviter des erreurs numériques. On épargne les détails.
 \begin{block}{Hyperparamètres}
 \begin{enumerate}
     \item Taux d'apprentissage: $10^{-4}$
-    \item Dimension d'embedding: 16
+    \item Dimension de vectorisation: 16
     \item Nombre de têtes: 8
     \item Nombre de paramètres: 1 786 753 
     \item Codage positionnel: sincos (AIAYN)
@@ -262,14 +277,12 @@ Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75
 \end{frame}
 
 \begin{frame}{Suggestions d'étapes à suivre}
-
-1) Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
-
-2) Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
-
-3) Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
-
-4) Compléter le protocole End-to-End-DNA (SELEX) pour transformer nos séquences d'ADN les plus stables en aptamères avec des affinités spécifiques.
+\begin{enumerate}
+    \item Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
+    \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
+    \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
+    \item Compléter le protocole End-to-End-DNA (SELEX) pour transformer nos séquences d'ADN les plus stables en aptamères avec des affinités spécifiques.
+\end{enumerate}
 
 \end{frame}
 
