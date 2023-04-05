@@ -52,17 +52,19 @@
 \end{enumerate}
 \end{block}
 
+\end{frame}
+
+\begin{frame}{MFE structure}
+
 \begin{figure} \label{fig:ADN_structure}
     \caption{Structures de l'ADN} \center
     \includegraphics[width=0.35\textwidth]{images/DNA_structure.png}
 \end{figure}
 
-Méthode NUPACK: estime MFE de la structure secondaire en fonction d'une analyse thermodynamique, Nearest-neighbor paramètres empiriques (Zadeh et al. 2010).
-
 \end{frame}
 
 \begin{frame}{Objectif}
-L'estimation du MFE d'une séquence d'ADN se complexifie en fonction de sa longeur. Cependant, les méthodes thermodynamiques comme celle de NUPACK sont rapides et relativement précises (r=70-80)
+L'estimation du MFE d'une séquence d'ADN se complexifie en fonction de sa longeur. Cependant, les méthodes thermodynamiques comme celle de NUPACK sont rapides et relativement précises.
 
 Objectif de recherche: entraîner des modèles d'apprentissage machine à prédire le MFE des structures secondaire de séquences d'ADN de 30 bases.
 
@@ -74,7 +76,7 @@ Retombées: L'apprentissage de représentations pour la fonction du MFE (étant 
 
 \begin{figure} \label{fig:MFE_nupack}
     \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.35\textwidth]{images/MFE_nupack.png}
+    \includegraphics[width=.7\textwidth]{images/MFE_nupack.png}
 \end{figure}
 
 \end{frame}
@@ -255,8 +257,8 @@ Pour éviter des erreurs numériques. On épargne les détails.
 
 Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75 avec MFE expérimentale.
 \begin{figure} \label{fig:MFE_exp_simul}
-    \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.35\textwidth]{images/MFE_exp_simul.png}
+    \caption{Corrélation MFEs simulés et empiriques} \center
+    \includegraphics[width=0.5\textwidth]{images/MFE_exp_simul.png}
 \end{figure}
 
 \end{frame}
