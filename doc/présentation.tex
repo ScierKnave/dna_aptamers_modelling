@@ -18,21 +18,56 @@
 \frame{\titlepage}
 
 \section{Contexte}
+\begin{frame}{ADN-Aptamères}
+\begin{block}{Propriétés fondamentales}
+\begin{enumerate}
+    \item Phénotype: affinité, se plie avec une fonction définie.
+    \item Génotype, séquence adenine (A), cytosine (C), guanine (G), thymine (T): réplicable IN VITRO (SELEX).
+\end{enumerate}
+\end{block}
 
-\begin{frame}{Contexte}
-Les aptamères (du latin \emph{aptus} signifiant attaché) sont des séquences synthétiques d'ADN qui s'attachent à des molécules cibles soit pour les détecter, soit pour les neutraliser. Leur spécifité leur permet de s'attacher seulement à la cible voulue sans affecter leur environment.
+\begin{block}{Biosenseur}
+\begin{enumerate}
+    \item Structure chimique simple: 20-100 bases (insertion).
+    \item Liaison: changement conformationnel (signal).
+    \item Stabilité: supérieure aux ARN-aptamères.
+\end{enumerate}
+\end{block}
+
+\begin{block}{Nanotechnologie et Computation}
+\begin{enumerate}
+    \item Stockage d'information: 2x supérieure au stockage binaire, pendant des milliers d'années.
+    \item Qualité dépend de la stabilité de la séquence.
+\end{enumerate}
+\end{block}
+
 \end{frame}
 
+\begin{frame}{Minimum free energy (MFE) structure}
 
-\begin{frame}{Contexte}
-L'énergie libre de Gibbs est une propriété des molécules qui représentent la capacité à faire du travail. Dans ce contexte, le travail à performer est l'attachement de l'aptamère avec la molécule cible. 
+Gibbs Free energy: potentiel thermodynamique (Énergie disponible), minimizé à l'équilibre chimique.
+Balance: Énergie, Entropie; transition de phase (Température, force ionique)
+Pairage des bases en  hélice tend à minimiser l'énergie (Aimants)
 
-Un aptamère doit avoir une énergie libre appropriée pour s'attacher à la molécule cible. C'est une condition nécessaire mais non suffisante.
+\begin{figure} \label{fig:ADN_structure}
+    \caption{Structures de l'ADN} \center
+    \includegraphics[width=0.2\textwidth]{images/DNA_structure.png}
+\end{figure}
+
 \end{frame}
-
 
 \begin{frame}{Objectif}
-Cependant, les molécules d'ADN sont assez larges et le calcul de l'énergie libre devient très complexe lorsque la taille des molécules augmentent. Notre objectif est donc d'entraîner un modèle capable de prédire l'énergie libre d'une séquence d'ADN quelconque, afin d'accélérer la recherche d'aptamère.
+Objectif de recherche: entraîner des modèles d'apprentissage machine à prédire le Gibbs Free Energy Change (proxy pour le MFE) des structures secondaires de séquences d'ADN de 30 bases.
+
+\end{frame}
+
+\begin{frame}{Visualisation données}
+
+\begin{figure} \label{fig:MFE_nupack}
+    \caption{Distribution des Gibbs Free Energy dans notre dataset} \center
+    \includegraphics[width=.7\textwidth]{images/MFE_nupack.png}
+\end{figure}
+
 \end{frame}
 
 \section{Baseline: MLP}
@@ -116,23 +151,6 @@ Il y a trois types de portes : la porte d'oubli (forget gate) permet au modèle 
 \end{frame}
 \section{Transformeurs}
 
-\begin{frame}{Architecture du transformeur}
-    \begin{figure} \label{fig:transformer}
-        \caption{Transformer de traduction dans AIAYN} \center
-        \includegraphics[width=0.5\textwidth]{images/2023-04-04-14-37-09.png}
-    \end{figure}
-    \end{frame}
-
-\begin{frame}{Vectorisation}
-    Avant d'entrer dans le coeur du transformeur (les couches de codage), les séquences sont 
-    vectorisés. Le mécanisme de vectorisation est appris. Ensuite, il est
-    pratique courante de sommer un vecteur positionnel sur 
-    la vectorisation de la séquence. Ce vecteur, tel que son nom l'indique,
-    contient de l'information sur la position des jetons de la séquence.
-    Il existe plusieurs méthodes pour générer ce vecteur positionnel. Nous avons 
-    utilisé la méthode proposée dans le papier AIAYN.
-\end{frame}
-
 \begin{frame}{Attention}
 Un système d'attention retourne une somme des vecteurs \emph{Valeurs} selon 
 une mesure de similarité entre les vecteurs \emph{Requêtes} et les vecteurs \emph{Clés}.
@@ -164,7 +182,7 @@ les deux vecteurs. Cela permet beaucoup de liberté au transformeur, qui obtient
 \begin{frame}{}
     
 {\bf Pourquoi le softmax?}
-Pour que les coéfficients somment à 1. (aussi parce que c'est facile à dériver et qu'on ne regarde pas juste les différences proportiennelles d'excitation, mais l'excitation absolue également (*insert nerd emoji)) *expliquer l'intuition pour l'attention
+Pour que les coéfficients somment à 1. (*expliquer l'intuition)
 
 {\bf Pourquoi la division par la racine de la taille? }
 Pour éviter des erreurs numériques. On épargne les détails.
@@ -224,8 +242,8 @@ Pour éviter des erreurs numériques. On épargne les détails.
 
 Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75 avec MFE expérimentale.
 \begin{figure} \label{fig:MFE_exp_simul}
-    \caption{Distribution des MFEs dans notre dataset} \center
-    \includegraphics[width=0.35\textwidth]{images/MFE_exp_simul.png}
+    \caption{MFEs simulés et empiriques} \center
+    \includegraphics[width=0.5\textwidth]{images/MFE_exp_simul.png}
 \end{figure}
 
 \end{frame}
@@ -233,9 +251,9 @@ Technique d'estimation thermodynamique du MFE similaire à celle de NUPACK: r=75
 \begin{frame}{Suggestions d'étapes à suivre}
 \begin{enumerate}
     \item Tester la validité prédictive du Transformer sur des séquences ADN dont le MFE a été établi empiriquement.
-    \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Puis, tester la validité prédictive du transformer sur ces minimas. Re-entraîner au besoin.
-    \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE, pour aller au-delà de l'aléatoire.
-    \item Compléter le protocole End-to-End-DNA (SELEX) pour transformer nos séquences d'ADN les plus stables en aptamères avec des affinités spécifiques.
+    \item Augmenter la taille du dataset à 10-100 million de séquences pour inclure des plus fortes minimas en termes de MFE. Re-entraîner au besoin.
+    \item Entraîner des GFlowNets à générer des séquences d'ADN qui minimisent le MFE (au-delà de l'aléatoire).
+    \item Compléter le protocole End-to-End-DNA (SELEX) avec les plus séquences les plus stables.
 \end{enumerate}
 
 \end{frame}
