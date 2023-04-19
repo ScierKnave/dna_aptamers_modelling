@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\title{Results}
+
+\author
+{
+    Dereck Piché \and
+    Guillermo Martinez \and
+    Jonas Gabirot \and
+}
+
+\begin{document}
+\maketitle
+
+\section*{Aptamers}
+Nucleic acids (DNA and RNA) carry the instructions on 
+how an organism can grow, develop and replicate. Recent
+ developments in our ability to generate large populations of 
+ degenerate oligonucleotides and isolate functional nucleic acid 
+ molecules that can bind to a specific target have led to the in 
+ vitro evolution of nucleic acid molecules for other than biological functions. 
+ These affinity reagents based on DNA or RNA are referred to as aptamers 
+ and posses two fundamental characteristics: their ability to fold 
+ into shapes with defined function (phenotypes) and the ability of 
+ their respective sequences (genotypes) to be replicated in vitro to 
+ produce progeny molecules with similar characteristics to their 
+ parent sequence. Aptamer-engineering consists in exploiting their 
+ unique phenotype-genotype connection to amplify individual molecules 
+ with desired phenotypes, and thus, optimizing their binding properties 
+ to the desired analyte.  For example, through directed evolution 
+ procedures such as Systematic Evolution of Ligands by Exponential 
+ Enrichment [SELEX], one can apply recursively the principles of 
+ natural selection on a large population of nucleic acid sequences 
+ incubated with a target— i.e. select and amplify the molecules 
+ that bind to the target to create a new population of molecules 
+ that are more enriched in sequences that can perform the desired 
+ function, until the pool is dominated by the sequences that bind 
+ with high affinity to the desired target. These resulting sequences 
+ with high affinity towards a specific analyte are called aptasensors 
+ (Dunn et al., 2017. Their relatively simple chemical structure 
+ (Jeddi et al., 2017)— i.e. sequences composed of roughly of 20 to 
+ 100 nucleotides in length (Zhang et al., 2019)— is crucial for the 
+ insertion of electrochemical or fluorescent reporter molecules, as 
+ well as surface-binding agents. When binding with its target, the 
+ aptamer undergoes a conformation change which can be exploited to 
+ generate an analytical signal (Jeddi et al., 2017). Consequently, 
+ aptasensors have been found to be very useful in tracking the propagation 
+ of various molecules in their respective environments such as pathogens, 
+ toxins, antibiotics and pesticides in food, water and soil samples (Dunn et al., 2017),
+  as well as adenosine triphosphate in cells ((Zhang et al., 2019).  
+Although DNA aptamers are more stable and more robust than their RNA counterparts, 
+the large array of computational tools available for single stranded* 
+RNA structure prediction are less pervasive for its DNA counterpart. 
+In fact, the computational tools available for DNA were restricted to 
+model only double-stranded DNA structures until 2017. Correctly predicting 
+the 3-dimensional structure of single-stranded DNA hairpins and other 
+more complex structures from 1 dimensional sequences has the potential 
+to not only revolutionize aptamer-engineering process but also to bolster
+ the range of application for aptasensors in more difficult environments (Jeddi et al., 2017)
+ The most crucial difficulty in aptamer-analyte binding analysis is the 
+ pre-folding of the aptamer to the correct equilibrium structure. Each DNA
+  sequence may adopt a variety of folded structures and brute force 
+  techniques such as naïve molecular dynamics search are exceedingly 
+  computationally expensive. End-to-End-DNA [E2EDNA]— an end-to-end aptamer-analyte 
+  binding pipeline for UTP complexing with simple hairpins—generates a set of 
+  structures a given aptamers is likely to adopt, as well as their respective 
+  probabilities given molecular dynamics simulations with appropriate force-fields. 
+  The pipeline finally implements ‘NUPACK’ and ‘seqfold’ Python packages to identify
+   the minimum free energy structure (Kilgour et al., 2021) using nearest-neighbor 
+   empirical parameters of a given temperature and ionic strength specified by the
+    user (Zadeh et al., 2011). 
+The purpose of this research is therefore to train deep learning neural 
+networks with randomly generated DNA sequences to predict the minimum 
+free energy structure given by ‘NUPACK’.
+The most stable aptamer sequences will be potential candidates to 
+undergo the entire E2EDNA protocol and be tested on their binding 
+affinity to a wide range of analyte of interest. The aptamers that 
+are the most stable and possessing the highest binding affinity will 
+be potential candidates to be synthetized and used to solve specific 
+problems such as trace the oil molecules in the oceans after a spill. 
+Given that shorter random-sequence libraries of doubly modified aptamers 
+usually posses a higher binding affinity for a target than larger 
+traditional sequences (30-mer VS 40-mer random regions), the length 
+of our random sequences will be of 30-mer (Dunn et al., 2017). 
+
+\section{Machine learning algorithms}
+\subsection*{Multilayer Perceptrons}
+This is the deep architecture that started it all 
+and the one we shall use to create our baseline since it does 
+not posess any bias towards the positionning of 
+the different tokens. The use of MLPs is made possible by the fact 
+that we are only dealing with 4 different possible elements as our tokens
+(A,C,G,T).
+
+\subsection{Reccurent Neural Networks}
+The broad definition of a recurrent neural network 
+is that it is the subclass of neural networks \cite{lstms} which have cycles in the layers. 
+RNNs (especially LTSM RNNs) were the default deep learning models used for sequences
+of tokens for a while, until the recent rise of transformers 
+These RNNs processed multiple tokens one at a time by storing information in the so called
+hidden state of the network. Since you have to process each token one at 
+a time, there is no parallelization. 
+One advantage of recurrent neural network is that they grow 
+linearly with respect to the amount of tokens as input, which means 
+that their really isn't a practical limit to the number of tokens that
+it can process with reasonable time complexity. 
+\subsection{Transformers}
+According to our assumptions, the transformer 
+architecture \cite{transformers} is by far the most appropriate
+for our task. Transformers use a multi-headed 
+attention mechanism and self-attention. Let
+be $t_1, \dots, t_n$ be a sequence of input tokens. Then a single 
+head will create for each input token $t_i$ an output $y_i$ which is a 
+linear combination of the other tokens given as input. It's complexity
+is $O(kn^2)$, where k are factors independant of input size. This process is 
+repeated for multiple heads with different parameters (which are learned). Their
+outputs are concatened and fed into a fully connected network that combines 
+their ouputs. The architecture is complex and impractical to spell out
+in greater detail here.
+
+
+\section{Currently used classical algorithms (State of The Art)}
+There is currently little research and writing on learning 
+aptamer properties with deep learning algorithms. Instead, biology-specific algorithms 
+biology-specific algorithms are favoured, as well as clustering algorithms. 
+clustering algorithms. For example, this article from January 2023 uses 
+an original algorithm that combines clustering methods to find an optimal 
+an optimal aptamer from a selection. 
+https://pubs.acs.org/doi/pdf/10.1021/acssynbio.2c00462.
+However, some recent papers use deep learning. 
+"Machine learning guided aptamer refinement 
+and discovery" (https://www.nature.com/articles/s41467-021-22555-9) 
+uses a standard MLP neural network to find the most compatible (high affinity) aptamers with target molecules. The estimation of free energy is a sub-step of the affinity calculation. It performs a 
+truncation step to minimise the length of the aptamer without altering its properties. 
+Another deep learning model with aptamers is AptaNet 
+(https://www.nature.com/articles/s41598-021-85629-0). This model uses an 
+MLP and a CNN to learn the relationship between aptamers and target proteins 
+proteins (Aptamere-protein relations or API). The MLP works best, with a 
+test accuracy of 91.38%. This neural network performs significantly better than more traditional 
+algorithms such as SVM, KNN and random forests. However, this model 
+uses a very detailed database containing numerous auxiliary variables 
+measured in the laboratory for each individual, but with only 1000 individuals. 
+No published aptamer model uses transformers or RNNs to predict free energy, so the 
+predict free energy, so our method would be original in this field.
+
+\section{Task}
+Let us briefly resume our task once again in order to make this document
+self-contained. Our task is to create models capable of reproducing 
+the classical algorithms used by the NUPACK foundation to predict the 
+free energy ($\in R$) of a DNA strand (a sequence of the elements of $\{A,C,G,T\}$).
+\section{Planned Methodology}
+\subsection{Training dataset}
+First, we will have to generate our training data. We shall implement a 
+simple python script which uses the NUPACK python library in order
+to generate a .json file containing our training data. We  
+will generate a dataset of a $1,000,000$ random DNA strands of length $30$, paired with their free energy as calculated by NUPACK. In the event that this dataset does not not
+suffice for adequate prediction accuracy (according to mean squared error), we will
+generate more examples and augment the expressivity of our models.
+\subsection{Baseline Algorithms}
+
+\subsubsection{Multilayered Perceptron}
+A multilayer perceptron (MLP) is a type of artificial neural network that consists of multiple layers of interconnected nodes organized into an input layer, one or more hidden layers, and an output layer. Each node in the MLP receives input signals from nodes in the previous layer, applies a non-linear activation function, in our case ReLU, to the weighted sum of those inputs, and passes the resulting output signal to nodes in the next layer. The weights between the nodes are learned through a process called backpropagation, where the network adjusts its internal parameters to minimize the difference between its predicted outputs and the actual target outputs. MLPs are widely used for supervised learning tasks such as classification and regression, and have been applied in areas such as computer vision, speech recognition, and natural language processing. Unlike transformers and RNNs, MLPs make no assumption about the sequential nature of the input data. In this way, an MLP is a more general algorithm and is thus well-suited to be a baseline comparison to test our assumptions about the data. For preliminary testing, we shall use an MLP with 10 hidden layers and an input size of 120, (30 bases of DNA one-hot encoded). We shall use the Adam optimizer as it is the most commonly used optimizer.
+
+\paragraph{Cost Function}
+Since this is a regression task, we shall use the Mean Squared Error (MSE) as the loss function.
+
+\paragraph{Encoding}
+To feed a string input to an MLP, we shall convert each base (A,C,T,G) to a one-hot encoded vector. With 4 categories and sequences of length 30, this gives an input size of 120.
+
+
+\subsubsection{Decision trees with AdaBoost}
+We might want to use this as a baseline. 
+
+
+\subsection{Advanced Algorithms}
+
+\subsubsection{Recurrent Neural Network}
+Recurrent neural network (RNN) is a deep lRecurrent neural network 
+(RNN) is a deep learning architecture used for sequential data prediction
+using both current and past inputs. earning architecture used for sequential 
+data prediction using both current and past inputs. 
+
+it in a simple way, RRN architectures are composed of an encoder and a encoder. The initial input is vectorized by the encoder and processed as a function of the initial state, which is random at first. As a result, the encoder's weights and biases are adjusted in the form a second state to incorporate both current and past input information. The encoder recursively processes the following vectorized inputs as functions of current states, while updating the weights and biases of current states to produce new states at each iteration. The encoder terminates this recursion when it has iterated over an entire sequence of features and concludes by transmitting its final state, which incorporates all previous states, to the encoder. In the case of a many-to-one RNN underlying architecture, this paper's architecture of interest, the encoder produces one output prediction as a function of the final state received from the encoder and as a function of its own current state, random at first. By contrasting the predicted output value to the actual value of the sequence, the encoder performs gradient descent to minimize the loss function, updates its current state and backpropagates it to the encoder's states. Once the weights and biases of the encoder states are adjusted, it iterates over the following sequence of features following the same recursion procedure. This recursive process is repeated for the entire length of sequences within the training set, and the regression model is cross-validated on its ability to minimize the squared mean error between target and predicted output values in the validation and test set. 
+\begin{figure}
+    \caption{Illustration of RNN architecures}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-42-13.png}
+\end{figure}
+
+RNNs are not without challenges. In order to update parameters, the backpropagation algorithm needs to calculate gradients at each different step. This usually results in unstable neural networks due to vanishing and exploding gradients which are unable to learn long-term dependencies. Long Short Term Memory networks (LSTMs) have been proposed to avoid these problems and designed to handle long-term dependencies. Initially proposed by Hochreiter and Schmidhuber (1997) \cite{hochreiter1997long},  LSTMs use cells with input, output and forget-gate to control the flow of information. 
+\begin{figure}
+    \caption{Long Short Term Memory cell}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-38-22.png}
+\end{figure}
+
+
+
+Given this paper's task to predict the level of free energy given a sequence of 30 features, we will train a many-to-one LSTMs for a regression task with multiple input time series. We will divide our entire dataset in training $80\%$, $10\%$ for testing and $10\%$ for validation. For each training instance, we will give the model a sequence of observations and a corresponding target value. The goal will be to forecast time series' free energy within the validation set. Time given, hyperparameter tuning will be performed on the validation set to optimize the choice of the learning rate, the number of units or layers, and the weight regularization techniques used as penalties on the loss function. Finally, the tunned model's prediction accuracy will be calculated on the test set using Mean Squared Error (MSE) and Mean Absolute Error (MAE) metrics. 
+\begin{figure}
+    \caption{Information flow}
+    \includegraphics[width=0.7\textwidth]{images/2023-03-17-16-41-25.png}
+\end{figure}
+
+\subsubsection{Tranformer}
+\paragraph{Architecture}
+The transformer architecture was initially made to translate text.
+However, it's subsequent use was mostly tied to token generation. 
+This use only required the encoder to be part of the architecture, 
+and recursively fed the predicted token in the current input while 
+truncating if the input size was over the limit.
+Our task is vastly different. We are dealing with a regressive task,
+since we are trying to learn a function of the form $R^n \to R$.
+Thus, we shall only keep the encoder part of the transformer architecture. 
+
+We shall use a simple linear mapping of the encoder output to the reals.
+If this approach is note successfull, we will consider adding a more complex
+network to replace the linear mapping.
+\paragraph{Cost Function}
+Since this is a regressive task, we shall use various instances of the 
+$l_p$-norm as our cost function.
+
+\paragraph{Tokenisation, encoding, positionnal encoding}
+Since the tranformer learns the embedding in the attention heads\cite{transformers}, 
+we shall simply use an integer mapping for the set of tokens $\{A,C,G,T\}$ as opposed to 
+one-hot encoding. This is done partly due to the way the Pytorch library works.
+
+On top of the embedding layer, we will add a positionnal encoding, which as the
+name suggests, transforms the input values in such a way that positionnal information 
+is implicitely given in their structure. There are many ways to do this. At first, we will use 
+a template created by Pytorch and available in their documentation which creates
+a positionnal using $sin$ and $cos$ functions (the code will be copied and 
+pasted directly without modifications). If this positionnal encoding does not
+work well, we shall implement one of our own.
+
+We will train and compare the accuracy of our encoder-only tranformer with 
+respect to the absence and inclusion of positionnal embedding to the input tokens.
+
+
+
+\paragraph{Advantages}
+What makes the encoder-only transformer different from other models? What are
+we taking advantage of by it's use? As opposed to recurrent neural networks, 
+this model is less sequential in nature. We are predicting by 
+taking the sequence of tokens all at once. We have high hopes for the 
+distributivity of attention made possible by the head multiplicity.
+We can imagine that there is high importance between the ends of the DNA 
+sequence, and at the center. A transformer, given enough data, would 
+be able to take advantage of this structure in order to simplify the task.
+
+
+\subsection{Comparisons and analysis}
+It would be more logical to compare learned models with a similar 
+number of parameters. This would give us more information as 
+to if the comparative advantages were caused by the particularities 
+of the architecture or simply because of the increase of expressivity 
+tied to bigger models. Our analysis will make extensive use of graphical 
+representations of the evolutions of the loss with respect to the number 
+of epochs performed during training. We will obsviously use the same number 
+of training examples for each model, though we do not plan on keeping 
+the order of training batches nor the particular elements of the training 
+batches equivalent (containing the same examples).
+
+\section{Preliminary Results and Challenges Ahead}
+
+\subsection{Multilayered Perceptron}
+Our MLP with 10 hidden layers and 88 281 parameters trained on 90\% of the data set and tested on 10\% of it gives the following results:
+
+Epoch 1: Test MSE loss of 1.02
+
+Epoch 2: Test MSE loss of 1.00
+\section{Changes from the initial plan}
+We have not strayed afar from the original plan. We 
+are only more sure that time will lack to implement 
+generative models like we intended after the attempt at reproducing
+the aforementionned NUPACK classical algorithm.
+
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
+\end{document}
