@@ -15,6 +15,10 @@
 \section{Summary}
 \section{Introduction}
 \subsection{Context}
+\subsection{Motivation}
+\subsection{Summary}
+\subsection{Litterature Review}
+\section{Aptamers}
 Nucleic acids (DNA and RNA) carry the instructions on 
 how an organism can grow, develop and replicate. Recent
  developments in our ability to generate large populations of 
@@ -71,7 +75,6 @@ to not only revolutionize aptamer-engineering process but also to bolster
    the minimum free energy structure (Kilgour et al., 2021) using nearest-neighbor 
    empirical parameters of a given temperature and ionic strength specified by the
     user (Zadeh et al., 2011). 
-\subsection{Motivation}
 The purpose of this research is therefore to train deep learning neural 
 networks with randomly generated DNA sequences to predict the minimum 
 free energy structure given by ‘NUPACK’.
@@ -85,8 +88,44 @@ Given that shorter random-sequence libraries of doubly modified aptamers
 usually posses a higher binding affinity for a target than larger 
 traditional sequences (30-mer VS 40-mer random regions), the length 
 of our random sequences will be of 30-mer (Dunn et al., 2017). 
-\section{Summary}
-\section{Litterature Review}
+
+\section{Machine learning algorithms}
+\subsection*{Multilayer Perceptrons}
+This is the deep architecture that started it all 
+and the one we shall use to create our baseline since it does 
+not posess any bias towards the positionning of 
+the different tokens. The use of MLPs is made possible by the fact 
+that we are only dealing with 4 different possible elements as our tokens
+(A,C,G,T).
+
+\subsection{Reccurent Neural Networks}
+The broad definition of a recurrent neural network 
+is that it is the subclass of neural networks \cite{lstms} which have cycles in the layers. 
+RNNs (especially LTSM RNNs) were the default deep learning models used for sequences
+of tokens for a while, until the recent rise of transformers 
+These RNNs processed multiple tokens one at a time by storing information in the so called
+hidden state of the network. Since you have to process each token one at 
+a time, there is no parallelization. 
+One advantage of recurrent neural network is that they grow 
+linearly with respect to the amount of tokens as input, which means 
+that their really isn't a practical limit to the number of tokens that
+it can process with reasonable time complexity. 
+\subsection{Transformers}
+According to our assumptions, the transformer 
+architecture \cite{transformers} is by far the most appropriate
+for our task. Transformers use a multi-headed 
+attention mechanism and self-attention. Let
+be $t_1, \dots, t_n$ be a sequence of input tokens. Then a single 
+head will create for each input token $t_i$ an output $y_i$ which is a 
+linear combination of the other tokens given as input. It's complexity
+is $O(kn^2)$, where k are factors independant of input size. This process is 
+repeated for multiple heads with different parameters (which are learned). Their
+outputs are concatened and fed into a fully connected network that combines 
+their ouputs. The architecture is complex and impractical to spell out
+in greater detail here.
+
+
+\section{Currently used classical algorithms (State of The Art)}
 There is currently little research and writing on learning 
 aptamer properties with deep learning algorithms. Instead, biology-specific algorithms 
 biology-specific algorithms are favoured, as well as clustering algorithms. 
@@ -110,7 +149,7 @@ measured in the laboratory for each individual, but with only 1000 individuals.
 No published aptamer model uses transformers or RNNs to predict free energy, so the 
 predict free energy, so our method would be original in this field.
 
-\section{Methods}
+\section{Task}
 Let us briefly resume our task once again in order to make this document
 self-contained. Our task is to create models capable of reproducing 
 the classical algorithms used by the NUPACK foundation to predict the 
@@ -226,7 +265,6 @@ of training examples for each model, though we do not plan on keeping
 the order of training batches nor the particular elements of the training 
 batches equivalent.
 
-\subsection{Results}
 \section{Results}
 
 \paragraph{MLP} Our MLP with 20 hidden layers and 1 million parameters trained on 90\% of the data set and tested on 10\% achieved a test MSE of 0.94, which is quite poor.
@@ -252,7 +290,16 @@ Note: Because the model overfitted before the weights were saved, the MSE for th
 On average, our model underestimates the free energy of a strand by 0.27 and the variance of its predictions is 24\% higher than that of the true values. For further analysis, our results were split into four quarters, going from the lowest free energy label to the highest one. The lowest quarter had the worst performance, with a MSE of 0.35. The second lowest was similar to the overall result, with a loss of 0.15. The second highest had a much better result, with a MSE of 0.08, and the highest one was even better at 0.03. These numbers show that our model performs much better on strands with high free energy.
 
 A graph of the distribution of the free energy labels in our dataset and an analysis of its variance shows that it is skewed towards high free energy values, thus the variance in high free energy strands is much lower than in low free energy strands. This means that for each high energy strand, the model has trained on many more strands with a similar free energy than it has for a lower energy strand. This suggests that increasing the number of training examples would greatly increase the performance of our model, in particular if they are filtered to make a more uniform distribution of free energy labels in the training dataset.
-\subsection{Conclusion}
-\subsection{Contributions of Each Member}
-\subsection{References}
+
+
+
+
+
+\section{Conclusion}
+
+\section{Contributions}
+
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
 \end{document}
