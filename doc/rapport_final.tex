@@ -15,62 +15,22 @@
 \section{Summary}
 \section{Introduction}
 \subsection{Context}
-Nucleic acids (DNA and RNA) carry the instructions on 
-how an organism can grow, develop and replicate. Recent
- developments in our ability to generate large populations of 
- degenerate oligonucleotides and isolate functional nucleic acid 
- molecules that can bind to a specific target have led to the in 
- vitro evolution of nucleic acid molecules for other than biological functions. 
- These affinity reagents based on DNA or RNA are referred to as aptamers 
- and posses two fundamental characteristics: their ability to fold 
- into shapes with defined function (phenotypes) and the ability of 
- their respective sequences (genotypes) to be replicated in vitro to 
- produce progeny molecules with similar characteristics to their 
- parent sequence. Aptamer-engineering consists in exploiting their 
- unique phenotype-genotype connection to amplify individual molecules 
- with desired phenotypes, and thus, optimizing their binding properties 
- to the desired analyte.  For example, through directed evolution 
- procedures such as Systematic Evolution of Ligands by Exponential 
- Enrichment [SELEX], one can apply recursively the principles of 
- natural selection on a large population of nucleic acid sequences 
- incubated with a target— i.e. select and amplify the molecules 
- that bind to the target to create a new population of molecules 
- that are more enriched in sequences that can perform the desired 
- function, until the pool is dominated by the sequences that bind 
- with high affinity to the desired target. These resulting sequences 
- with high affinity towards a specific analyte are called aptasensors 
- (Dunn et al., 2017. Their relatively simple chemical structure 
- (Jeddi et al., 2017)— i.e. sequences composed of roughly of 20 to 
- 100 nucleotides in length (Zhang et al., 2019)— is crucial for the 
- insertion of electrochemical or fluorescent reporter molecules, as 
- well as surface-binding agents. When binding with its target, the 
- aptamer undergoes a conformation change which can be exploited to 
- generate an analytical signal (Jeddi et al., 2017). Consequently, 
- aptasensors have been found to be very useful in tracking the propagation 
- of various molecules in their respective environments such as pathogens, 
- toxins, antibiotics and pesticides in food, water and soil samples (Dunn et al., 2017),
-  as well as adenosine triphosphate in cells ((Zhang et al., 2019).  
-Although DNA aptamers are more stable and more robust than their RNA counterparts, 
-the large array of computational tools available for single stranded* 
-RNA structure prediction are less pervasive for its DNA counterpart. 
-In fact, the computational tools available for DNA were restricted to 
-model only double-stranded DNA structures until 2017. Correctly predicting 
-the 3-dimensional structure of single-stranded DNA hairpins and other 
-more complex structures from 1 dimensional sequences has the potential 
-to not only revolutionize aptamer-engineering process but also to bolster
- the range of application for aptasensors in more difficult environments (Jeddi et al., 2017)
- The most crucial difficulty in aptamer-analyte binding analysis is the 
- pre-folding of the aptamer to the correct equilibrium structure. Each DNA
-  sequence may adopt a variety of folded structures and brute force 
-  techniques such as naïve molecular dynamics search are exceedingly 
-  computationally expensive. End-to-End-DNA [E2EDNA]— an end-to-end aptamer-analyte 
-  binding pipeline for UTP complexing with simple hairpins—generates a set of 
-  structures a given aptamers is likely to adopt, as well as their respective 
-  probabilities given molecular dynamics simulations with appropriate force-fields. 
-  The pipeline finally implements ‘NUPACK’ and ‘seqfold’ Python packages to identify
-   the minimum free energy structure (Kilgour et al., 2021) using nearest-neighbor 
-   empirical parameters of a given temperature and ionic strength specified by the
-    user (Zadeh et al., 2011). 
+Nucleic acid structures such as DNA (Deoxyribonucleic acid) and RNA (ribonucleic acid) are the foundation of life.
+However, these structures are themselves a linear combination of 4 types of nitrogenous bases: A (Adenine), G (Guanine), C (Cytosine) and T (Thymine, in the case of DNA).
+In their simplest form, DNA molecules can be conceived as single-stranded, one-dimensional, linear sequences of nitrogenous bases, which are commonly referred to as oligonucleotides.
+When synthetized in a way as to possess affinities, these oligonucleotides are referred to as aptamers.
+Every aptamer is the result of a SELEX (Systematic evolution of ligands by exponential enrichment) procedure in which those possessing binding affinities towards specific molecules are recursively selected and reproduced by the experimentalist.
+Consequently,  aptamers are a promising biotechnology and have been found useful for tracking the propagation of various molecules in their respective environments such as pathogens, toxins, antibiotics and pesticides in food, water and soil samples (Dunn et al., 2017), as well as adenosine triphosphate in cells (Zhang et al., 2019).
+
+Similar to other DNA molecules, single-stranded aptamers fold into two-dimensional structures, and eventually three-dimensional structures, through base pairing interactions among themselves or with other aptamers.
+At specific temperatures and ionic concentrations, higher dimensional aptamer structures display specific levels of free energy. The lower the entropy, the lower the free energy of the molecule.
+The lower the free energy, the higher the stability of the folded aptamer structure. Pipelines such as NUPACK can predict the change in free energy between the higher and lower-dimensional configurations of a given aptamer— a given one-dimensional sequence of nitrogenous bases.
+The more negative the variation in free energy (indicating that the higher dimensional state of the aptamer minimized the free energy of its one-dimensional state), the more stable the folded structure of a single-stranded aptamer is predicted to be.
+
+There is a trade-off between binding affinity and folded stability. Longer DNA sequences tend to be more stable, whereas shorter sequences tend to possess higher binding affinity.
+We hypothesize that 30 bases-long aptamer sequences will be a good compromise.
+
+
 \subsection{Motivation}
 The purpose of this research is therefore to train deep learning neural 
 networks with randomly generated DNA sequences to predict the minimum 
